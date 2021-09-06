@@ -2776,7 +2776,7 @@ ul.breadcrumb li:last-child {
   }
 }
 body {
-  background: url("/images/background.jpg");
+  background: url("http://img.l3m0nade.xyz/background.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 50% 50%;
