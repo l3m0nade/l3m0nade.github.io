@@ -28,7 +28,7 @@
 <meta property="og:description" content="背景关于NAND Flash老版的NAND:Page &#x3D; 512,OOB &#x3D; 16 ​    NAND容量可达1GB以上，价格也相对便宜，适合存储数据。一般来说，128MB以下容量NAND FLASH 芯片的一页大小为528字节，用来存放数据，另外每一页还有16字节的备用空间（SpareData,OOB），用来存储ECC校验&#x2F;坏块标志等信息，再由若干页组成一个块，通常一块为32页16K。 Page">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-22T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-09-23T03:17:31.439Z">
+<meta property="article:modified_time" content="2021-09-23T03:20:08.352Z">
 <meta property="article:author" content="L3m0nade">
 <meta property="article:tag" content="IOT">
 <meta name="twitter:card" content="summary">
@@ -220,7 +220,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2021-09-23 00:00:00 / 修改时间：11:17:31" itemprop="dateCreated datePublished" datetime="2021-09-23T00:00:00+08:00">2021-09-23</time>
+      <time title="创建时间：2021-09-23 00:00:00 / 修改时间：11:20:08" itemprop="dateCreated datePublished" datetime="2021-09-23T00:00:00+08:00">2021-09-23</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -269,6 +269,8 @@
 <p><code>Page = 512,OOB = 16</code></p>
 <p><code>one block = 31Pages + OOB = 31(512 + 16) + 16</code></p>
 <p>​    与NOR相比，NAND不是完全可靠的，每块芯片出厂时都有一定比例的坏块存在，对数据的存取不是使用地址映射而是通过寄存器的操作，串行存取数据。</p>
+<span id="more"></span>
+
 <h3 id="Yaffs文件系统"><a href="#Yaffs文件系统" class="headerlink" title="Yaffs文件系统"></a>Yaffs文件系统</h3><p>​    yaffs有yaffs1,yaffs2，第二种就是对更大容量NAND有更好支持</p>
 <p>​    Yaffs对文件系统上的所有内容（比如正常文件，目录，链接，设备文件等等）都统一当作文件来处理，每个文件都有一个页面专门存放文件头，文件头保存了文件的模式、所有者id、组id、长度、文件名、Parent Object ID等信息。因为需要在一页内放下这些内容，所以对文件名的长度，符号链接对象的路径名等长度都有限制。</p>
 <p>​    前面说到对于NAND FLASH上的每一页数据，都有额外的空间用来存储附加信息，通常NAND驱动只使用了这些空间的一部分，Yaffs正是利用了这部分空间中剩余的部分来存储文件系统相关的内容。以<strong>512+16B</strong>为一个PAGE的NAND FLASH芯片为例,Yaffs文件系统数据的存储布局如下所示：</p>
