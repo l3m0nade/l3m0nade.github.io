@@ -448,4 +448,149 @@
         <tag>Hexo</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Nand Flash固件内容提取</title>
+    <url>/2021/09/23/nandFlash%E5%9B%BA%E4%BB%B6%E6%8F%90%E5%8F%96/</url>
+    <content><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><h3 id="关于NAND-Flash"><a href="#关于NAND-Flash" class="headerlink" title="关于NAND Flash"></a>关于NAND Flash</h3><p>老版的NAND:<code>Page = 512,OOB = 16</code></p>
+<p>​    NAND容量可达1GB以上，价格也相对便宜，适合存储数据。一般来说，128MB以下容量NAND FLASH 芯片的一页大小为528字节，用来存放数据，另外每一页还有16字节的备用空间（SpareData,OOB），用来存储ECC校验/坏块标志等信息，再由若干页组成一个块，通常一块为32页16K。</p>
+<p><code>Page = 512,OOB = 16</code></p>
+<p><code>one block = 31Pages + OOB = 31(512 + 16) + 16</code></p>
+<p>​    与NOR相比，NAND不是完全可靠的，每块芯片出厂时都有一定比例的坏块存在，对数据的存取不是使用地址映射而是通过寄存器的操作，串行存取数据。</p>
+<h3 id="Yaffs文件系统"><a href="#Yaffs文件系统" class="headerlink" title="Yaffs文件系统"></a>Yaffs文件系统</h3><p>​    yaffs有yaffs1,yaffs2，第二种就是对更大容量NAND有更好支持</p>
+<p>​    Yaffs对文件系统上的所有内容（比如正常文件，目录，链接，设备文件等等）都统一当作文件来处理，每个文件都有一个页面专门存放文件头，文件头保存了文件的模式、所有者id、组id、长度、文件名、Parent Object ID等信息。因为需要在一页内放下这些内容，所以对文件名的长度，符号链接对象的路径名等长度都有限制。</p>
+<p>​    前面说到对于NAND FLASH上的每一页数据，都有额外的空间用来存储附加信息，通常NAND驱动只使用了这些空间的一部分，Yaffs正是利用了这部分空间中剩余的部分来存储文件系统相关的内容。以<strong>512+16B</strong>为一个PAGE的NAND FLASH芯片为例,Yaffs文件系统数据的存储布局如下所示：</p>
+<table>
+<thead>
+<tr>
+<th>0..511</th>
+<th>数据区域</th>
+<th>512</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>512..515</td>
+<td>YAFFS TAG</td>
+<td>4</td>
+</tr>
+<tr>
+<td>516</td>
+<td>Data status byte</td>
+<td>1</td>
+</tr>
+<tr>
+<td>517</td>
+<td>Block status byte 坏块标志位</td>
+<td>1</td>
+</tr>
+<tr>
+<td>518..519</td>
+<td>YAFFS TAG</td>
+<td>2</td>
+</tr>
+<tr>
+<td>520..522</td>
+<td>后256字节数据的ECC校验结果</td>
+<td>3</td>
+</tr>
+<tr>
+<td>523..524</td>
+<td>YAFFS TAG</td>
+<td>2</td>
+</tr>
+<tr>
+<td>525..527</td>
+<td>前256字节数据的ECC校验结果</td>
+<td>3</td>
+</tr>
+</tbody></table>
+<p>在YAFFS TAG这8bytes中：</p>
+<table>
+<thead>
+<tr>
+<th>Bits</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>20</td>
+<td>ChunkID，该page在一个文件内的索引号，所以文件大小被限制在2^20 PAGE 即512Mb</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2 bits serial number</td>
+</tr>
+<tr>
+<td>10</td>
+<td>ByteCount 该page内的有效字节数</td>
+</tr>
+<tr>
+<td>18</td>
+<td>ObjectID 对象ID号，用来唯一标示一个文件</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Ecc, Yaffs_Tags本身的ECC校验和</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Unused</td>
+</tr>
+</tbody></table>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>所以一般来说，要么使用jffs等文件系统平铺在Nand Flash上，要么就是巧用Yaffs适配NANDFlash。这个用没用具体要看OOB里有无相关Yaffs的标志位适配，他会占用30或42字节（64OOB，32；128OOB，42）。具体YAFFS的这些标志位代表什么意思可以查看官网说明，和上面老版的那个很类似。</p>
+<p><a href="https://yaffs.net/yaffs-2-specification">https://yaffs.net/yaffs-2-specification</a></p>
+<h2 id="针对拿到的固件分析"><a href="#针对拿到的固件分析" class="headerlink" title="针对拿到的固件分析"></a>针对拿到的固件分析</h2><p>固件大小是0x11000000 = （128K + 8K） * 2048</p>
+<p>即这个东西有两个Plane，每个Plane有1024Block,每个Block有64Page，每个Page是(2048 + 128 )Bytes .</p>
+<table>
+<thead>
+<tr>
+<th>分区</th>
+<th>大小</th>
+<th>十六进制表示</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Block</td>
+<td>（2K+128）*64 Bytes</td>
+<td>0x880 * 64 = 0x22000</td>
+</tr>
+<tr>
+<td>Page</td>
+<td>(2K+128)</td>
+<td>0x880 = 0x800 + 0x80</td>
+</tr>
+</tbody></table>
+<h4 id="初步脚本："><a href="#初步脚本：" class="headerlink" title="初步脚本："></a>初步脚本：</h4><p>对于每一个块，看了第一，二，最后页的OOB第一字节是否为/xff确定坏块不的官方说法。</p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line">the <span class="number">1</span>st <span class="keyword">byte</span> in the spare area of the <span class="number">1</span>st <span class="keyword">or</span> <span class="number">2</span>nd <span class="keyword">or</span> last page</span><br><span class="line">does <span class="keyword">not</span> contain FFh is a Bad block.</span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line">f1 = <span class="built_in">open</span>(<span class="string">&quot;xxx.BIN&quot;</span>,<span class="string">&quot;rb&quot;</span>)</span><br><span class="line"></span><br><span class="line">f2 = <span class="built_in">open</span>(<span class="string">&quot;xxx_extract.bin&quot;</span>,<span class="string">&quot;wb&quot;</span>)</span><br><span class="line"></span><br><span class="line">page = <span class="number">2048</span> + <span class="number">128</span></span><br><span class="line">total = <span class="number">0x7359840</span></span><br><span class="line">block_per_page = <span class="number">64</span></span><br><span class="line">block = math.<span class="built_in">ceil</span>(math.<span class="built_in">ceil</span>(total/page)/block_per_page)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i in <span class="built_in">range</span>(block):</span><br><span class="line">    first_page = f1.<span class="built_in">read</span>(page)</span><br><span class="line">    second_page = f1.<span class="built_in">read</span>(page)</span><br><span class="line">    others = []</span><br><span class="line">    <span class="keyword">for</span> j in <span class="built_in">range</span>(<span class="number">61</span>):</span><br><span class="line">        others.<span class="built_in">append</span>(f1.<span class="built_in">read</span>(page))</span><br><span class="line">    last_page = f1.<span class="built_in">read</span>(page)</span><br><span class="line">    <span class="keyword">if</span> first_page[<span class="number">2048</span>] == <span class="number">0xFF</span> <span class="keyword">and</span> second_page[<span class="number">2048</span>] == <span class="number">0xFF</span> <span class="keyword">and</span> last_page[<span class="number">2048</span>] == <span class="number">0xFF</span>:</span><br><span class="line">        f2.<span class="built_in">write</span>(first_page[:<span class="number">2048</span>])</span><br><span class="line">        f2.<span class="built_in">write</span>(second_page[:<span class="number">2048</span>])</span><br><span class="line">        <span class="keyword">for</span> k in <span class="built_in">range</span>(<span class="number">61</span>):</span><br><span class="line">            f2.<span class="built_in">write</span>(others[k][:<span class="number">2048</span>])</span><br><span class="line">        f2.<span class="built_in">write</span>(last_page[:<span class="number">2048</span>])</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Bad Block &#123;&#125;&quot;</span>.format(i))</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">f1.<span class="built_in">close</span>()</span><br><span class="line">f2.<span class="built_in">close</span>()</span><br></pre></td></tr></table></figure>
+
+
+
+<p>尝试直接采用yaffs解不行，yaffs本身这个文件结构就是基于NAND的.不像ramfs和jffs那种是把内容直接平铺在flash中，而是和NAND一样的data + OOB形式。</p>
+<h4 id="yaffs解失败："><a href="#yaffs解失败：" class="headerlink" title="yaffs解失败："></a>yaffs解失败：</h4><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="string">$</span> <span class="string">./yaffshiv</span>  <span class="string">-f</span> <span class="string">xxx.BIN</span> <span class="string">-d</span> <span class="string">image</span> <span class="string">-p</span> <span class="number">2048</span> <span class="string">-s</span> <span class="number">128</span></span><br><span class="line"><span class="attr">Found 0 file objects with the following YAFFS settings:</span></span><br><span class="line"><span class="attr">Page size:</span> <span class="number">2048</span></span><br><span class="line"><span class="attr">Spare size:</span> <span class="number">128</span></span><br><span class="line"><span class="attr">ECC layout:</span> <span class="literal">True</span></span><br><span class="line"><span class="attr">Endianess:</span> <span class="string">Little</span></span><br><span class="line"></span><br><span class="line"><span class="string">Extracting</span> <span class="string">file</span> <span class="string">objects...</span></span><br><span class="line"><span class="string">Created</span> <span class="number">0</span> <span class="string">directories,</span> <span class="number">0</span> <span class="string">files,</span> <span class="string">and</span> <span class="number">0</span> <span class="string">links.</span></span><br></pre></td></tr></table></figure>
+
+<p>由于YFFS是支持老NAND 512B+16的，后来现在的NAND如(2048+64)字节，(256+8)、(512+16)、(2048+128)的都是Yaff2来支持更大了。</p>
+<p>但是在这个固件中，OOB显然没有存储YAFFS的相关组织数据或tag，只是有ecc校验。下面会说到</p>
+<h4 id="OOB数据"><a href="#OOB数据" class="headerlink" title="OOB数据"></a>OOB数据</h4><p>发现比较奇怪的是8行16字节的OOB，开头两字节一定是\xff\xff，但是后14字节有全是00的，只发生在上面一页和下面一页的data区正好也是00的一段，怀疑是不是这14字节是不是相接的和上下连在一起？然后的14字节是校验值，然后再加上\xff\xff完成前32字节</p>
+<p>例如有一页全是00数据，（下面第二行，即OOB+0x10位置会有一行奇怪的14Byte）</p>
+<p>OOB:</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">FF</span> FF <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span></span><br><span class="line"><span class="attribute">A5</span> BB <span class="number">1</span>D F<span class="number">0</span> B<span class="number">8</span> A<span class="number">2</span> <span class="number">03</span> <span class="number">70</span> <span class="number">69</span> <span class="number">78</span> <span class="number">36</span> <span class="number">69</span> <span class="number">84</span> B<span class="number">1</span> FF FF</span><br><span class="line"><span class="attribute">FF</span> FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF</span><br><span class="line"><span class="attribute">FF</span> FF FF FF FF FF FF FF FF FF <span class="number">00</span> <span class="number">00</span> FF FF FF FF</span><br><span class="line"><span class="attribute">FF</span> FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF</span><br><span class="line"><span class="attribute">FF</span> FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF</span><br><span class="line"><span class="attribute">FF</span> FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF</span><br><span class="line"><span class="attribute">FF</span> FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>多个全是00内存的页，仔细查看，都是A5 BB 1D F0 B8 A2 03 70 69 78 36 69 84 B1，怀疑是内存数据的校验码。</p>
+<p>然后比较奇怪的是在全是00的数据页中会有奇怪的数据插入</p>
+<p>在page+0x410的位置（page大小0x800 + 0x80）</p>
+<p>0A 3A E9 39 43 DE 09 AC 83 22 D0 E1 7F F3</p>
+<p>应该也是校验值，因为全0页的他们都相同。</p>
+<p>有种可能是OOB的2-16的14个字节和这个校验值互换位置，还有就是他只是做了插入。</p>
+<p>经过进一步观察发现不是互换，所以提取这个<strong>平铺文件系统的NAND</strong>只要删掉中间的14字节checknum，接上OOB的[2:16]字节的14字节数据，就是完整的一页0x800数据了，然后由于没有OOB数据证明会有页的地址映射关系，并且在观察中发现上下页的内存是连续的，所以提取就是直接把中间0x410位置的checknum删掉，在不上最后14字节，然后一页一页接一起就好了。</p>
+<p>重写一下是这样的：</p>
+<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">the 1st byte in the spare area of the 1st or 2nd or last page</span><br><span class="line">does not contain FFh is a Bad block.</span><br><span class="line"></span><br><span class="line">+ remove checknum and add OOB&#x27;s data</span><br><span class="line">+ known:no bad block</span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line"></span><br><span class="line">f1 = open(&quot;source.BIN&quot;,&quot;rb&quot;)</span><br><span class="line"></span><br><span class="line">f2 = open(&quot;extract2_output.bin&quot;,&quot;wb&quot;)</span><br><span class="line"></span><br><span class="line">page = 2048 + 128</span><br><span class="line">total = 0x11000000</span><br><span class="line">block_per_page = 64</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">for i in range(total//page):</span><br><span class="line"><span class="code">    datas = f1.read(page)</span></span><br><span class="line"><span class="code">    data1 = datas[0:0x410]</span></span><br><span class="line"><span class="code">    data2 = datas[0x41e:0x800]</span></span><br><span class="line"><span class="code">    data3 = datas[0x802:0x810]</span></span><br><span class="line"><span class="code">    noOOB = data1+data2+data3</span></span><br><span class="line"><span class="code">    </span></span><br><span class="line"><span class="code">    f2.write(noOOB)</span></span><br><span class="line"></span><br><span class="line">f1.close()</span><br><span class="line">f2.close()</span><br><span class="line"></span><br><span class="line"><span class="code">    </span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>最后解开固件，可以正常binwalk -Me了。</p>
+]]></content>
+      <categories>
+        <category>IOT</category>
+      </categories>
+      <tags>
+        <tag>IOT</tag>
+      </tags>
+  </entry>
 </search>
