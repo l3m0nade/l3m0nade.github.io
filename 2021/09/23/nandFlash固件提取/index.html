@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.l3m0nade.xyz","root":"/","images":"/images","scheme":"Gemini","version":"8.7.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.l3m0nade.xyz","root":"/","images":"/images","scheme":"Gemini","version":"8.7.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"livere","storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 <meta name="description" content="背景关于NAND Flash老版的NAND:Page &#x3D; 512,OOB &#x3D; 16 ​    NAND容量可达1GB以上，价格也相对便宜，适合存储数据。一般来说，128MB以下容量NAND FLASH 芯片的一页大小为528字节，用来存放数据，另外每一页还有16字节的备用空间（SpareData,OOB），用来存储ECC校验&#x2F;坏块标志等信息，再由若干页组成一个块，通常一块为32页16K。 Page">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nand Flash固件内容提取">
@@ -28,7 +28,7 @@
 <meta property="og:description" content="背景关于NAND Flash老版的NAND:Page &#x3D; 512,OOB &#x3D; 16 ​    NAND容量可达1GB以上，价格也相对便宜，适合存储数据。一般来说，128MB以下容量NAND FLASH 芯片的一页大小为528字节，用来存放数据，另外每一页还有16字节的备用空间（SpareData,OOB），用来存储ECC校验&#x2F;坏块标志等信息，再由若干页组成一个块，通常一块为32页16K。 Page">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-22T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-09-23T03:20:08.352Z">
+<meta property="article:modified_time" content="2021-09-28T13:22:14.038Z">
 <meta property="article:author" content="L3m0nade">
 <meta property="article:tag" content="IOT">
 <meta name="twitter:card" content="summary">
@@ -88,7 +88,7 @@
   <ul class="main-menu menu">
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">2</span></a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">3</span></a></li>
         <li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a></li>
   </ul>
 </nav>
@@ -120,7 +120,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8ENAND-Flash"><span class="nav-number">1.1.</span> <span class="nav-text">关于NAND Flash</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Yaffs%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.2.</span> <span class="nav-text">Yaffs文件系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-number">1.3.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%92%88%E5%AF%B9%E6%8B%BF%E5%88%B0%E7%9A%84%E5%9B%BA%E4%BB%B6%E5%88%86%E6%9E%90"><span class="nav-number">2.</span> <span class="nav-text">针对拿到的固件分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9D%E6%AD%A5%E8%84%9A%E6%9C%AC%EF%BC%9A"><span class="nav-number">2.0.1.</span> <span class="nav-text">初步脚本：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#yaffs%E8%A7%A3%E5%A4%B1%E8%B4%A5%EF%BC%9A"><span class="nav-number">2.0.2.</span> <span class="nav-text">yaffs解失败：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OOB%E6%95%B0%E6%8D%AE"><span class="nav-number">2.0.3.</span> <span class="nav-text">OOB数据</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8ENAND-Flash"><span class="nav-number">1.1.</span> <span class="nav-text">关于NAND Flash</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Yaffs%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.2.</span> <span class="nav-text">Yaffs文件系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-number">1.3.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%92%88%E5%AF%B9%E6%8B%BF%E5%88%B0%E7%9A%84%E5%9B%BA%E4%BB%B6%E5%88%86%E6%9E%90"><span class="nav-number">2.</span> <span class="nav-text">针对拿到的固件分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9D%E6%AD%A5%E8%84%9A%E6%9C%AC%EF%BC%9A"><span class="nav-number">2.0.1.</span> <span class="nav-text">初步脚本：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#yaffs%E8%A7%A3%E5%A4%B1%E8%B4%A5%EF%BC%9A"><span class="nav-number">2.0.2.</span> <span class="nav-text">yaffs解失败：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OOB%E6%95%B0%E6%8D%AE"><span class="nav-number">2.0.3.</span> <span class="nav-text">OOB数据</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E4%BA%9B%E6%96%87%E4%BB%B6%E6%B2%A1%E6%9C%89%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">有些文件没有？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.1.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -136,17 +136,17 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -218,10 +218,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2021-09-23 00:00:00 / 修改时间：11:20:08" itemprop="dateCreated datePublished" datetime="2021-09-23T00:00:00+08:00">2021-09-23</time>
+      <time title="创建时间：2021-09-23 00:00:00" itemprop="dateCreated datePublished" datetime="2021-09-23T00:00:00+08:00">2021-09-23</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-09-28 21:22:14" itemprop="dateModified" datetime="2021-09-28T21:22:14+08:00">2021-09-28</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -246,14 +252,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>4.1k</span>
+      <span>7.6k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>5 分钟</span>
+      <span>9 分钟</span>
     </span>
 </div>
 
@@ -400,6 +406,127 @@
 <figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">the 1st byte in the spare area of the 1st or 2nd or last page</span><br><span class="line">does not contain FFh is a Bad block.</span><br><span class="line"></span><br><span class="line">+ remove checknum and add OOB&#x27;s data</span><br><span class="line">+ known:no bad block</span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line"></span><br><span class="line">f1 = open(&quot;source.BIN&quot;,&quot;rb&quot;)</span><br><span class="line"></span><br><span class="line">f2 = open(&quot;extract2_output.bin&quot;,&quot;wb&quot;)</span><br><span class="line"></span><br><span class="line">page = 2048 + 128</span><br><span class="line">total = 0x11000000</span><br><span class="line">block_per_page = 64</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">for i in range(total//page):</span><br><span class="line"><span class="code">    datas = f1.read(page)</span></span><br><span class="line"><span class="code">    data1 = datas[0:0x410]</span></span><br><span class="line"><span class="code">    data2 = datas[0x41e:0x800]</span></span><br><span class="line"><span class="code">    data3 = datas[0x802:0x810]</span></span><br><span class="line"><span class="code">    noOOB = data1+data2+data3</span></span><br><span class="line"><span class="code">    </span></span><br><span class="line"><span class="code">    f2.write(noOOB)</span></span><br><span class="line"></span><br><span class="line">f1.close()</span><br><span class="line">f2.close()</span><br><span class="line"></span><br><span class="line"><span class="code">    </span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>最后解开固件，可以正常binwalk -Me了。</p>
+<h2 id="有些文件没有？"><a href="#有些文件没有？" class="headerlink" title="有些文件没有？"></a>有些文件没有？</h2><p>比如lighttpd,upgrade_finish.sh这些文件。</p>
+<p>观察所有OOB块，有一些会用到0x20-0x40之间的字节做标记，不是平铺在Nandflash上的，可能是yaffs文件系统的结构？</p>
+<p>比如长这样：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">FF</span> FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF</span><br><span class="line"><span class="attribute">22</span> <span class="number">10</span> E<span class="number">2</span> <span class="number">29</span> <span class="number">71</span> <span class="number">7</span>A B<span class="number">7</span> <span class="number">1</span>F C<span class="number">8</span> <span class="number">3</span>E FF <span class="number">6</span>C DE <span class="number">7</span>B <span class="number">00</span> <span class="number">10</span></span><br><span class="line"><span class="attribute">00</span> <span class="number">00</span> <span class="number">01</span> <span class="number">01</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> FF FF <span class="number">00</span> <span class="number">00</span> <span class="number">25</span> <span class="number">00</span></span><br><span class="line"><span class="attribute">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> FF FF FF FF <span class="number">00</span> <span class="number">00</span> FF FF FF FF</span><br><span class="line"><span class="attribute">FF</span> FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF</span><br><span class="line"><span class="attribute">FF</span> FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF</span><br><span class="line"><span class="attribute">FF</span> FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF</span><br><span class="line"><span class="attribute">FF</span> FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>发现第二行倒数两个字节也变了，变成 00 10了。以前是ff ff.</p>
+</li>
+<li><p>OOB块产生变化的地方比较零散，最大的一块是0x30e0880-0x7359880，OOB都是不一样的。区间大小0x4279000.</p>
+</li>
+<li><p>有意思的是binwalk把离0x30e0880的下一page，0x30e1100就认出是yaffs头，有某种联系？</p>
+</li>
+<li><p>尝试分割出来这段内存单独binwalk,识别出了各种乱七八糟的头，只要解开就会递归到内存满。</p>
+</li>
+</ul>
+<p><code>dd if=source.BIN of=sourceYaffs.bin bs=69701632 skip=51251328 count=1 </code></p>
+<ul>
+<li><p>但是可以看到里面没有加密，ELF文件头，#！/bin/sh脚本头都可以看到，只是脚本内容和名字有映射关系，binwalk似乎不能做到识别。</p>
+</li>
+<li><p>yaffs解的脚本莫名其妙解出来一个php-cgi.其他就解不开。。。应该也是识别有问题，这个结构可能很新或者被调整了。。。而且这个php-cgiida打不开，显然是因为没页都加进去了14字节checknum，没加入14字节数据导致的。</p>
+</li>
+</ul>
+<p>下面内容先只针对sourceYaffs.bin文件做研究，即0x30e0880-0x7359880,大小0x4279000</p>
+<p>针对一些文件和文件名寻找规律：**(注意，这时候的文件，校验值那些还没有去掉)**</p>
+<table>
+<thead>
+<tr>
+<th>文件名</th>
+<th>文件名符号地址</th>
+<th>文件地址</th>
+<th>文件结束地址</th>
+<th>文件名与文件page大小关系</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>upgrade_finish.sh</td>
+<td>0xdd00</td>
+<td>0xe580</td>
+<td>0xe624</td>
+<td>差一page</td>
+</tr>
+<tr>
+<td>php-cgi</td>
+<td>0x401e90a</td>
+<td>0x401f180</td>
+<td>0x4279000</td>
+<td>差一page</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>所以总结来看：</p>
+<ul>
+<li><p>如果不是常规OOB，则下面的内容就是文件名占1page,下一个page就是文件内容</p>
+</li>
+<li><p>而且文件内容如果不满1page，全部填充0xff，再从下一个page在记录文件名，再填充0xff,再下一page新程序。</p>
+</li>
+<li><p>可以靠这个规律提取。而且名字是从某一页的第11字节开始，前10字节有其他标记意思。但是对于一些长得像文件夹名字的不太试用，比如.flash,app这种</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>HEX</th>
+<th>名字</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>01 00 00 00 01 00 00 00 FF FF</td>
+<td>.Flash</td>
+</tr>
+<tr>
+<td>03 00 00 00 01 00 00 00 FF FF</td>
+<td>app</td>
+</tr>
+<tr>
+<td>03 00 00 00 01 00 00 00 FF FF</td>
+<td>\x00\x00</td>
+</tr>
+<tr>
+<td>01 00 00 00 02 01 00 00 FF FF</td>
+<td>notify_bound</td>
+</tr>
+<tr>
+<td>01 00 00 00 02 01 00 00 FF FF</td>
+<td>fe_setting_hard.bin</td>
+</tr>
+<tr>
+<td>01 00 00 00 02 01 00 00 FF FF</td>
+<td>CUpgrade</td>
+</tr>
+<tr>
+<td>01 00 00 00 6C 06 00 00 FF FF</td>
+<td>lighttpd</td>
+</tr>
+<tr>
+<td>01 00 00 00 88 03 00 00 FF FF</td>
+<td>jquery.ui.dialog.js</td>
+</tr>
+<tr>
+<td>01 00 00 00 88 03 00 00 FF FF</td>
+<td>pluginControl.js</td>
+</tr>
+<tr>
+<td>03 00 00 00 5C 01 00 00 FF FF</td>
+<td>home</td>
+</tr>
+</tbody></table>
+<p>观察到作为名字，前10字节有些规律，区分文件还是文件夹，但是没这10字节就去分不开名字和内容了。</p>
+<p>可以用这3部分数据做一步过滤</p>
+<p>01 ==00 00 00== <strong>88 03</strong>  <em>00 00 FF FF</em></p>
+<p>建一个文件夹flash，里面放sourceYaffs.bin和如下脚本：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">the 1st byte in the spare area of the 1st or 2nd or last page</span></span><br><span class="line"><span class="string">does not contain FFh is a Bad block.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">+ remove checknum and add OOB&#x27;s data</span></span><br><span class="line"><span class="string">+ known:no bad block</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">+ only yaffs </span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line">f1 = <span class="built_in">open</span>(<span class="string">&quot;sourceYaffs.bin&quot;</span>,<span class="string">&quot;rb&quot;</span>)</span><br><span class="line">page = <span class="number">2048</span> + <span class="number">128</span></span><br><span class="line">total = <span class="number">0x4279000</span></span><br><span class="line"><span class="comment">#black is string.punctuations,without _ .- </span></span><br><span class="line">black = [<span class="number">33</span>, <span class="number">34</span>, <span class="number">35</span>, <span class="number">36</span>, <span class="number">37</span>, <span class="number">38</span>, <span class="number">39</span>, <span class="number">40</span>, <span class="number">41</span>, <span class="number">42</span>, <span class="number">43</span>, <span class="number">44</span>, <span class="number">47</span>, <span class="number">58</span>, <span class="number">59</span>, <span class="number">60</span>, <span class="number">61</span>, <span class="number">62</span>, <span class="number">63</span>, <span class="number">64</span>, <span class="number">91</span>, <span class="number">92</span>, <span class="number">93</span>, <span class="number">94</span>, <span class="number">96</span>, <span class="number">123</span>, <span class="number">124</span>, <span class="number">125</span>, <span class="number">126</span>]</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">checkdata</span>(<span class="params">data</span>):</span></span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    for i in data:</span></span><br><span class="line"><span class="string">        if i in black:</span></span><br><span class="line"><span class="string">            return False</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    tmp = data.strip(<span class="string">b&#x27;\x00&#x27;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> <span class="string">b&#x27;\x00&#x27;</span> <span class="keyword">not</span> <span class="keyword">in</span> tmp :</span><br><span class="line">        <span class="keyword">return</span> tmp</span><br><span class="line">    <span class="keyword">else</span>: </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span>  </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">checkhead</span>(<span class="params">head</span>):</span></span><br><span class="line">    d1 = head[<span class="number">1</span>:<span class="number">4</span>]</span><br><span class="line">    d2 = head[<span class="number">4</span>:<span class="number">6</span>]</span><br><span class="line">    d3 = head[<span class="number">6</span>:<span class="number">10</span>]</span><br><span class="line">    <span class="comment">#print(&quot;d1,d2,d3:&quot;,d1,d2,d3)</span></span><br><span class="line">    <span class="keyword">if</span> d1 != <span class="string">b&#x27;\x00\x00\x00&#x27;</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">if</span> <span class="string">b&#x27;\x00&#x27;</span> <span class="keyword">in</span> d2:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">if</span> d3 != <span class="string">b&#x27;\x00\x00\xff\xff&#x27;</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">oobFilter</span>(<span class="params">data</span>):</span></span><br><span class="line">    data1 = data[<span class="number">0</span>:<span class="number">0x410</span>]</span><br><span class="line">    data2 = data[<span class="number">0x41e</span>:<span class="number">0x800</span>]</span><br><span class="line">    data3 = data[<span class="number">0x802</span>:<span class="number">0x810</span>]</span><br><span class="line">    <span class="keyword">return</span> data1+data2+data3</span><br><span class="line"></span><br><span class="line"><span class="comment">#get name addrs</span></span><br><span class="line">addr2name = &#123;&#125;</span><br><span class="line">addrs = []</span><br><span class="line">addr = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(total//page):</span><br><span class="line">    datas = f1.read(page)</span><br><span class="line">    head = datas[<span class="number">0</span>:<span class="number">10</span>]</span><br><span class="line">    <span class="keyword">if</span> checkhead(head):</span><br><span class="line">        <span class="comment">#print(&quot;head:&quot;,head)</span></span><br><span class="line">        name = datas[<span class="number">10</span>:<span class="number">0x20</span>]</span><br><span class="line">        name = checkdata(name)    </span><br><span class="line">        <span class="keyword">if</span> name:</span><br><span class="line">            <span class="comment">#print(name,hex(addr))</span></span><br><span class="line">            addr2name[<span class="built_in">hex</span>(addr)] = name</span><br><span class="line">            addrs.append(addr)</span><br><span class="line">    addr += page</span><br><span class="line">addrs.append(total)</span><br><span class="line"></span><br><span class="line"><span class="comment">#get each content</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(addr2name)):</span><br><span class="line">    Name = addr2name[<span class="built_in">hex</span>(addrs[i])]</span><br><span class="line">    dataStart = addrs[i] + page</span><br><span class="line">    dataPoint = dataStart</span><br><span class="line">    dataNext = addrs[i+<span class="number">1</span>]</span><br><span class="line">    f1.seek(dataStart)</span><br><span class="line">        <span class="comment">#print(Name,hex(dataStart),hex(dataPoint),hex(dataNext))</span></span><br><span class="line">    f = <span class="built_in">open</span>(Name,<span class="string">&#x27;wb&#x27;</span>)</span><br><span class="line">    <span class="keyword">while</span> dataPoint != dataNext:</span><br><span class="line">        </span><br><span class="line">        <span class="comment">#print(hex(dataPoint),hex(dataNext))</span></span><br><span class="line">        data = f1.read(page)</span><br><span class="line">        data = oobFilter(data)</span><br><span class="line">        data = data.strip(<span class="string">b&#x27;\xff&#x27;</span>)</span><br><span class="line">        <span class="keyword">if</span> i == <span class="number">1390</span>:</span><br><span class="line">            <span class="built_in">print</span>(data)</span><br><span class="line">        f.write(data)</span><br><span class="line">        dataPoint += page</span><br><span class="line">    <span class="comment">#print(&quot;Finish %s&quot; % (Name))</span></span><br><span class="line">    f.close()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>(addr2name))</span><br><span class="line">f1.close()</span><br></pre></td></tr></table></figure>
+
+<p>最终把一部分可能带yaffs结构的程序也解出来。</p>
+<p>但是最后一个php-cgi就用一点问题。。。。目前错误无法定位</p>
 
     </div>
 
@@ -452,13 +579,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">15k</span>
+    <span title="站点总字数">42k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">19 分钟</span>
+    <span title="站点阅读时长">51 分钟</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
