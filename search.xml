@@ -18,9 +18,22 @@
 </li>
 <li><p>Win10</p>
 </li>
-<li><p>git bash <a href="http://git-scm.com/">下载安装</a>  <strong>git只是一种版本控制工具，而GitHub是支持git的一个代码仓库网站</strong> </p>
+<li><p>本地安装git。git bash <a href="http://git-scm.com/">下载安装</a>  <strong>git只是一种版本控制工具，而GitHub是支持git的一个代码仓库网站</strong> </p>
+<p>Windows: <a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></p>
+<p>Mac：使用 <a href="http://mxcl.github.com/homebrew/">Homebrew</a>, <a href="http://www.macports.org/">MacPorts</a> 或者下载 <a href="http://sourceforge.net/projects/git-osx-installer/">安装程序</a>。<br>Linux (Ubuntu, Debian)：<code>sudo apt-get install git-core</code><br>Linux (Fedora, Red Hat, CentOS)：<code>sudo yum install git-core</code></p>
 </li>
-<li><p>nodejs <a href="https://nodejs.org/en/">下载安装</a></p>
+<li><p>本地安装nodejs</p>
+<p>Node.js 为大多数平台提供了官方的 <a href="https://nodejs.org/en/download/">安装程序</a>。对于中国大陆地区用户，可以前往 <a href="https://npm.taobao.org/mirrors/node">淘宝 Node.js 镜像</a> 下载。</p>
+<p>其它的安装方法：</p>
+<ul>
+<li>Windows：通过 <a href="https://github.com/jasongin/nvs/">nvs</a>（推荐）或者 <a href="https://github.com/nvm-sh/nvm">nvm</a> 安装。</li>
+<li>Mac：使用 <a href="https://brew.sh/">Homebrew</a> 或 <a href="http://www.macports.org/">MacPorts</a> 安装。</li>
+<li>Linux（DEB/RPM-based）：从 <a href="https://github.com/nodesource/distributions">NodeSource</a> 安装。</li>
+<li>其它：使用相应的软件包管理器进行安装，可以参考由 Node.js 提供的 <a href="https://nodejs.org/en/download/package-manager/">指导</a></li>
+</ul>
+<p>对于 Mac 和 Linux 同样建议使用 nvs 或者 nvm，以避免可能会出现的权限问题。</p>
+<p>尝试采用nvs，可以管理多版本nodejs.安装好后cmd里nvs选择版本安装（好慢）</p>
+<p>直接官网安装方式。</p>
 </li>
 <li><p>服务器（个人是阿里云买的学生服务器，Ubuntu20.04)</p>
 </li>
@@ -29,7 +42,8 @@
 <li><p>个人版本：</p>
 <figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">L3m0nade@DESKTOP-<span class="number">7</span>PB7DBA MINGW64 <span class="regexp">/d/</span>hexo</span><br><span class="line">$ git --version</span><br><span class="line">git version <span class="number">2.30</span>.<span class="number">0</span>.windows.<span class="number">2</span></span><br><span class="line"></span><br><span class="line">L3m0nade@DESKTOP-<span class="number">7</span>PB7DBA MINGW64 <span class="regexp">/d/</span>hexo</span><br><span class="line">$ node -v</span><br><span class="line">v12.<span class="number">16.1</span></span><br><span class="line">(官方建议使用nodejs10.<span class="number">0.0</span>以上版本)</span><br><span class="line">L3m0nade@DESKTOP-<span class="number">7</span>PB7DBA MINGW64 <span class="regexp">/d/</span>hexo</span><br><span class="line">$ npm -v</span><br><span class="line"><span class="number">6.13</span>.<span class="number">4</span></span><br><span class="line">(nodejs包管理器，类似python的pip)</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h2 id="Hexo-Github-Pages（没用到个人服务器）"><a href="#Hexo-Github-Pages（没用到个人服务器）" class="headerlink" title="Hexo+Github Pages（没用到个人服务器）"></a>Hexo+Github Pages（没用到个人服务器）</h2><h3 id="Github-Pages"><a href="#Github-Pages" class="headerlink" title="Github Pages???"></a>Github Pages???</h3><ul>
+<h2 id="Hexo-Github-Pages（没用到个人服务器）"><a href="#Hexo-Github-Pages（没用到个人服务器）" class="headerlink" title="Hexo+Github Pages（没用到个人服务器）"></a>Hexo+Github Pages（没用到个人服务器）</h2><p>这个部分的效果就是本地-&gt;github-&gt;渲染yourname.github.io</p>
+<h3 id="Github-Pages"><a href="#Github-Pages" class="headerlink" title="Github Pages"></a>Github Pages</h3><ul>
 <li><strong>GitHub Pages</strong>是GitHub公司提供的免费静态网站托管服务。</li>
 <li><strong>GitHub Pages</strong>严格意义上来说并不是一个服务器，只是可以提供类似服务器功能的<strong>一种服务</strong>。</li>
 <li>当我们把HTML等资源文件存放到GitHub指定的位置时，也就是一个<strong>GitHub Pages仓库</strong>下，<strong>GitHub Pages服务</strong>会对这些文件进行处理并把它展示为一个网站。</li>
@@ -38,7 +52,7 @@
 <h3 id="GitHub-Pages设置"><a href="#GitHub-Pages设置" class="headerlink" title="GitHub Pages设置"></a>GitHub Pages设置</h3><p>如果你是初次安装git，需要初始化一些配置：</p>
 <ul>
 <li><p>设置git用户信息,在桌面上点击右键git bash Here</p>
- <figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">git config  -<span class="keyword">global</span> <span class="keyword">user</span>.name &quot;your_username&quot;</span><br><span class="line">git config  -<span class="keyword">global</span> <span class="keyword">user</span>.email &quot;your_email&quot;</span><br></pre></td></tr></table></figure></li>
+ <figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line">git <span class="keyword">config</span>  --<span class="keyword">global</span> user<span class="variable">.name</span> <span class="string">&quot;your_username&quot;</span></span><br><span class="line">git <span class="keyword">config</span>  --<span class="keyword">global</span> user<span class="variable">.email</span> <span class="string">&quot;your_email&quot;</span></span><br></pre></td></tr></table></figure></li>
 <li><p>生成SSH Key公钥 </p>
 <ul>
 <li><p>检查一下Windows下的“C:\Users\用户名.ssh”文件下有没有生成过id_rsa 和 id_rsa.pub的公私钥文件。</p>
