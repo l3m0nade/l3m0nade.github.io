@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.2">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -20,12 +20,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"blog.l3m0nade.xyz","root":"/","images":"/images","scheme":"Gemini","version":"8.7.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"livere","storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="CTF_Reverse,IOT菜鸡的学习记录">
+<meta name="description" content="CTF_Reverse,IOT Research,others">
 <meta property="og:type" content="website">
 <meta property="og:title" content="L3m0nade的博客">
 <meta property="og:url" content="http://blog.l3m0nade.xyz/">
 <meta property="og:site_name" content="L3m0nade的博客">
-<meta property="og:description" content="CTF_Reverse,IOT菜鸡的学习记录">
+<meta property="og:description" content="CTF_Reverse,IOT Research,others">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="L3m0nade">
 <meta property="article:tag" content="CTF,Reverse,IOT">
@@ -87,6 +87,7 @@
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
         <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">3</span></a></li>
+        <li class="menu-item menu-item-playlist"><a href="/playlist/" rel="section"><i class="music fa-fw"></i>Music_Playlist</a></li>
         <li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a></li>
   </ul>
 </nav>
@@ -127,7 +128,7 @@
     <img class="site-author-image" itemprop="image" alt="L3m0nade"
       src="/images/touxiang.jpg">
   <p class="site-author-name" itemprop="name">L3m0nade</p>
-  <div class="site-description" itemprop="description">CTF_Reverse,IOT菜鸡的学习记录</div>
+  <div class="site-description" itemprop="description">CTF_Reverse,IOT Research,others</div>
 </div>
 <div class="site-state-wrap site-overview-item animated">
   <nav class="site-state">
@@ -196,7 +197,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/touxiang.jpg">
       <meta itemprop="name" content="L3m0nade">
-      <meta itemprop="description" content="CTF_Reverse,IOT菜鸡的学习记录">
+      <meta itemprop="description" content="CTF_Reverse,IOT Research,others">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -248,14 +249,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>7.6k</span>
+      <span>9k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>9 分钟</span>
+      <span>11 分钟</span>
     </span>
 </div>
 
@@ -267,7 +268,7 @@
     
     <div class="post-body" itemprop="articleBody">
           <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><h3 id="关于NAND-Flash"><a href="#关于NAND-Flash" class="headerlink" title="关于NAND Flash"></a>关于NAND Flash</h3><p>老版的NAND:<code>Page = 512,OOB = 16</code></p>
-<p>​    NAND容量可达1GB以上，价格也相对便宜，适合存储数据。一般来说，128MB以下容量NAND FLASH 芯片的一页大小为528字节，用来存放数据，另外每一页还有16字节的备用空间（SpareData,OOB），用来存储ECC校验/坏块标志等信息，再由若干页组成一个块，通常一块为32页16K。</p>
+<p>​	NAND容量可达1GB以上，价格也相对便宜，适合存储数据。一般来说，128MB以下容量NAND FLASH 芯片的一页大小为528字节，用来存放数据，另外每一页还有16字节的备用空间（SpareData,OOB），用来存储ECC校验&#x2F;坏块标志等信息，再由若干页组成一个块，通常一块为32页16K。</p>
 <p><code>Page = 512,OOB = 16</code></p>
 <p><code>one block = 31Pages + OOB = 31(512 + 16) + 16</code></p>
 <p>​    与NOR相比，NAND不是完全可靠的，每块芯片出厂时都有一定比例的坏块存在，对数据的存取不是使用地址映射而是通过寄存器的操作，串行存取数据。</p>
@@ -309,7 +310,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/touxiang.jpg">
       <meta itemprop="name" content="L3m0nade">
-      <meta itemprop="description" content="CTF_Reverse,IOT菜鸡的学习记录">
+      <meta itemprop="description" content="CTF_Reverse,IOT Research,others">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -361,14 +362,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>12k</span>
+      <span>13k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>14 分钟</span>
+      <span>16 分钟</span>
     </span>
 </div>
 
@@ -422,7 +423,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/touxiang.jpg">
       <meta itemprop="name" content="L3m0nade">
-      <meta itemprop="description" content="CTF_Reverse,IOT菜鸡的学习记录">
+      <meta itemprop="description" content="CTF_Reverse,IOT Research,others">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -474,14 +475,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>23k</span>
+      <span>25k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>28 分钟</span>
+      <span>30 分钟</span>
     </span>
 </div>
 
@@ -492,7 +493,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="2021HWS-By-L3m0nade"><a href="#2021HWS-By-L3m0nade" class="headerlink" title="2021HWS By L3m0nade"></a>2021HWS By L3m0nade</h1><h2 id="0x00-aet-reverse"><a href="#0x00-aet-reverse" class="headerlink" title="0x00 aet-reverse"></a>0x00 aet-reverse</h2><p>​        程序名是xtea但其实是tea,找到源python脚本调一下看一下数据大小端后就行了。看了flag原来真的想骗我分辨xtea,tea…</p>
+          <h1 id="2021HWS-By-L3m0nade"><a href="#2021HWS-By-L3m0nade" class="headerlink" title="2021HWS By L3m0nade"></a>2021HWS By L3m0nade</h1><h2 id="0x00-aet-reverse"><a href="#0x00-aet-reverse" class="headerlink" title="0x00 aet-reverse"></a>0x00 aet-reverse</h2><p>​		程序名是xtea但其实是tea,找到源python脚本调一下看一下数据大小端后就行了。看了flag原来真的想骗我分辨xtea,tea…</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/08/31/L3m0nade_HWSwp/#more" rel="contents">
@@ -539,13 +540,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">42k</span>
+    <span title="站点总字数">46k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">51 分钟</span>
+    <span title="站点阅读时长">56 分钟</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

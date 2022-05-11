@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.l3m0nade.xyz/playlist/</loc>
+    
+    <lastmod>2022-05-11</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.l3m0nade.xyz/2021/09/07/hexoBlogBuild/</loc>
     
     <lastmod>2022-05-11</lastmod>
@@ -60,7 +67,7 @@
 
   
   <url>
-    <loc>http://blog.l3m0nade.xyz/tags/Hexo/</loc>
+    <loc>http://blog.l3m0nade.xyz/tags/CTF/</loc>
     <lastmod>2022-05-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -74,7 +81,7 @@
   </url>
   
   <url>
-    <loc>http://blog.l3m0nade.xyz/tags/CTF/</loc>
+    <loc>http://blog.l3m0nade.xyz/tags/Hexo/</loc>
     <lastmod>2022-05-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -83,7 +90,7 @@
 
   
   <url>
-    <loc>http://blog.l3m0nade.xyz/categories/Hexo/</loc>
+    <loc>http://blog.l3m0nade.xyz/categories/CTF/</loc>
     <lastmod>2022-05-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -97,7 +104,7 @@
   </url>
   
   <url>
-    <loc>http://blog.l3m0nade.xyz/categories/CTF/</loc>
+    <loc>http://blog.l3m0nade.xyz/categories/Hexo/</loc>
     <lastmod>2022-05-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

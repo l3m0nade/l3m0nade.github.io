@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.2">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -89,6 +89,7 @@
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
         <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">3</span></a></li>
+        <li class="menu-item menu-item-playlist"><a href="/playlist/" rel="section"><i class="music fa-fw"></i>Music_Playlist</a></li>
         <li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a></li>
   </ul>
 </nav>
@@ -130,7 +131,7 @@
     <img class="site-author-image" itemprop="image" alt="L3m0nade"
       src="/images/touxiang.jpg">
   <p class="site-author-name" itemprop="name">L3m0nade</p>
-  <div class="site-description" itemprop="description">CTF_Reverse,IOT菜鸡的学习记录</div>
+  <div class="site-description" itemprop="description">CTF_Reverse,IOT Research,others</div>
 </div>
 <div class="site-state-wrap site-overview-item animated">
   <nav class="site-state">
@@ -200,7 +201,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/touxiang.jpg">
       <meta itemprop="name" content="L3m0nade">
-      <meta itemprop="description" content="CTF_Reverse,IOT菜鸡的学习记录">
+      <meta itemprop="description" content="CTF_Reverse,IOT Research,others">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -252,14 +253,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>12k</span>
+      <span>13k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>14 分钟</span>
+      <span>16 分钟</span>
     </span>
 </div>
 
@@ -295,7 +296,7 @@
 <ul>
 <li>Windows：通过 <a target="_blank" rel="noopener" href="https://github.com/jasongin/nvs/">nvs</a>（推荐）或者 <a target="_blank" rel="noopener" href="https://github.com/nvm-sh/nvm">nvm</a> 安装。</li>
 <li>Mac：使用 <a target="_blank" rel="noopener" href="https://brew.sh/">Homebrew</a> 或 <a target="_blank" rel="noopener" href="http://www.macports.org/">MacPorts</a> 安装。</li>
-<li>Linux（DEB/RPM-based）：从 <a target="_blank" rel="noopener" href="https://github.com/nodesource/distributions">NodeSource</a> 安装。</li>
+<li>Linux（DEB&#x2F;RPM-based）：从 <a target="_blank" rel="noopener" href="https://github.com/nodesource/distributions">NodeSource</a> 安装。</li>
 <li>其它：使用相应的软件包管理器进行安装，可以参考由 Node.js 提供的 <a target="_blank" rel="noopener" href="https://nodejs.org/en/download/package-manager/">指导</a></li>
 </ul>
 <p>对于 Mac 和 Linux 同样建议使用 nvs 或者 nvm，以避免可能会出现的权限问题。</p>
@@ -314,18 +315,20 @@
 <li><strong>GitHub Pages</strong>是GitHub公司提供的免费静态网站托管服务。</li>
 <li><strong>GitHub Pages</strong>严格意义上来说并不是一个服务器，只是可以提供类似服务器功能的<strong>一种服务</strong>。</li>
 <li>当我们把HTML等资源文件存放到GitHub指定的位置时，也就是一个<strong>GitHub Pages仓库</strong>下，<strong>GitHub Pages服务</strong>会对这些文件进行处理并把它展示为一个网站。</li>
-<li>所以说可以<strong>将GitHub Pages提供的功能替代Web服务器的功能</strong>。我们只需要把编写好的HTML等资源文件存到<strong>GitHub指定的位置</strong>，那么就实现了类似的Web服务器的功能，可以响应请求，并把相应的资源文件发送给客户端。 </li>
+<li>所以说可以<strong>将GitHub Pages提供的功能替代Web服务器的功能</strong>。我们只需要把编写好的HTML等资源文件存到<strong>GitHub指定的位置</strong>，那么就实现了类似的Web服务器的功能，可以响应请求，并把相应的资源文件发送给客户端。</li>
 </ul>
 <h3 id="GitHub-Pages设置"><a href="#GitHub-Pages设置" class="headerlink" title="GitHub Pages设置"></a>GitHub Pages设置</h3><p>如果你是初次安装git，需要初始化一些配置：</p>
 <ul>
 <li><p>设置git用户信息,在桌面上点击右键git bash Here</p>
- <figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">config</span>  --<span class="keyword">global</span> user<span class="variable">.name</span> <span class="string">&quot;your_username&quot;</span></span><br><span class="line">git <span class="keyword">config</span>  --<span class="keyword">global</span> user<span class="variable">.email</span> <span class="string">&quot;your_email&quot;</span></span><br></pre></td></tr></table></figure></li>
+ <figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">config</span>  --<span class="keyword">global</span> user<span class="variable">.name</span> <span class="string">&quot;your_username&quot;</span></span><br><span class="line">git <span class="keyword">config</span>  --<span class="keyword">global</span> user<span class="variable">.email</span> <span class="string">&quot;your_email&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
 <li><p>生成SSH Key公钥 </p>
 <ul>
 <li><p>检查一下Windows下的“C:\Users\用户名.ssh”文件下有没有生成过id_rsa 和 id_rsa.pub的公私钥文件。</p>
 </li>
 <li><p>若没有：</p>
-<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -<span class="built_in">t</span> rsa -C “your_github_email”</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -<span class="built_in">t</span> rsa -C “your_github_email”</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>这样你就在本地生成rsa的公私钥了</p>
 </li>
 </ul>
@@ -339,33 +342,36 @@
 <li><p>创建Github Pages仓库</p>
 <ul>
 <li>点击右上角+号，创建新仓库：new respository.</li>
-<li> 在Repository name输入框中你需要填入你的【Github用户名.github.io】，这一点非常重要。因为这样才能保证你建立的是GithubPages页面而不是其他的代码仓库。</li>
+<li>在Repository name输入框中你需要填入你的【Github用户名.github.io】，这一点非常重要。因为这样才能保证你建立的是GithubPages页面而不是其他的代码仓库。</li>
 <li>勾选Initialize this repository with a README选项。</li>
 <li>这个时候你在浏览器输入<a target="_blank" rel="noopener" href="https://your_github_name.github.io后,可以看到一个简陋的界面,那么说明你已经成功开启了githubpages服务了./">https://your_github_name.github.io后，可以看到一个简陋的界面，那么说明你已经成功开启了GithubPages服务了。</a></li>
 </ul>
 </li>
-<li><p>下面需要做的就是安装Hexo，并且使用Hexo来生成Blog站点。 </p>
+<li><p>下面需要做的就是安装Hexo，并且使用Hexo来生成Blog站点。</p>
 </li>
 </ul>
 <h3 id="Hexo-安装"><a href="#Hexo-安装" class="headerlink" title="Hexo 安装"></a>Hexo 安装</h3><ul>
 <li><p>先在本地创建一个放Hexo东西的文件夹，我创在了D:\hexo</p>
 </li>
 <li><p>在git bash中打开到此路径，安装后做初始化。这里可能init会很慢导致openssl ssl超时断链，这里我把梯子改为全局配置后解决的。</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">cd D:</span><br><span class="line">cd hexo</span><br><span class="line"></span><br><span class="line">L3m0nade@DESKTOP-<span class="number">7</span>PB7DBA MINGW64 <span class="regexp">/d/</span>hexo</span><br><span class="line">$ npm install -g hexo-cli</span><br><span class="line"></span><br><span class="line">D:\NodeJS\node_global\hexo -&gt; D:\NodeJS\node_global\node_modules\hexo-cli\bin\hexo</span><br><span class="line">npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@~<span class="number">2.3</span>.<span class="number">2</span> (node_modules\hexo-cli\node_modules\chokidar\node_modules\fsevents):</span><br><span class="line">npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform <span class="keyword">for</span> fsevents@<span class="number">2.3</span>.<span class="number">2</span>: wanted &#123;<span class="string">&quot;os&quot;</span>:<span class="string">&quot;darwin&quot;</span>,<span class="string">&quot;arch&quot;</span>:<span class="string">&quot;any&quot;</span>&#125; (current: &#123;<span class="string">&quot;os&quot;</span>:<span class="string">&quot;win32&quot;</span>,<span class="string">&quot;arch&quot;</span>:<span class="string">&quot;x64&quot;</span>&#125;)</span><br><span class="line"></span><br><span class="line">+ hexo-cli@<span class="number">4.3</span>.<span class="number">0</span></span><br><span class="line">updated <span class="number">1</span> <span class="keyword">package</span> in <span class="number">6.773</span>s</span><br><span class="line"></span><br><span class="line">L3m0nade@DESKTOP-<span class="number">7</span>PB7DBA MINGW64 <span class="regexp">/d/</span>hexo</span><br><span class="line">$ hexo init</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">L3m0nade@DESKTOP-<span class="number">7</span>PB7DBA MINGW64 <span class="regexp">/d/</span>hexo</span><br><span class="line">$ ls</span><br><span class="line">_config.landscape.yml  node_modules<span class="regexp">/      package.json  source/</span></span><br><span class="line">_config.yml            <span class="keyword">package</span>-lock.json  scaffolds<span class="regexp">/    themes/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">L3m0nade@DESKTOP-<span class="number">7</span>PB7DBA MINGW64 <span class="regexp">/d/</span>hexo</span><br><span class="line">$ hexo g</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">L3m0nade@DESKTOP-<span class="number">7</span>PB7DBA MINGW64 <span class="regexp">/d/</span>hexo</span><br><span class="line">$ hexo s </span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">cd D:</span><br><span class="line">cd hexo</span><br><span class="line"></span><br><span class="line">L3m0nade@DESKTOP-<span class="number">7</span>PB7DBA MINGW64 <span class="regexp">/d/</span>hexo</span><br><span class="line">$ npm install -g hexo-cli</span><br><span class="line"></span><br><span class="line">D:\NodeJS\node_global\hexo -&gt; D:\NodeJS\node_global\node_modules\hexo-cli\bin\hexo</span><br><span class="line">npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@~<span class="number">2.3</span>.<span class="number">2</span> (node_modules\hexo-cli\node_modules\chokidar\node_modules\fsevents):</span><br><span class="line">npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform <span class="keyword">for</span> fsevents@<span class="number">2.3</span>.<span class="number">2</span>: wanted &#123;<span class="string">&quot;os&quot;</span>:<span class="string">&quot;darwin&quot;</span>,<span class="string">&quot;arch&quot;</span>:<span class="string">&quot;any&quot;</span>&#125; (current: &#123;<span class="string">&quot;os&quot;</span>:<span class="string">&quot;win32&quot;</span>,<span class="string">&quot;arch&quot;</span>:<span class="string">&quot;x64&quot;</span>&#125;)</span><br><span class="line"></span><br><span class="line">+ hexo-cli@<span class="number">4.3</span>.<span class="number">0</span></span><br><span class="line">updated <span class="number">1</span> <span class="keyword">package</span> in <span class="number">6.773</span>s</span><br><span class="line"></span><br><span class="line">L3m0nade@DESKTOP-<span class="number">7</span>PB7DBA MINGW64 <span class="regexp">/d/</span>hexo</span><br><span class="line">$ hexo init</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">L3m0nade@DESKTOP-<span class="number">7</span>PB7DBA MINGW64 <span class="regexp">/d/</span>hexo</span><br><span class="line">$ ls</span><br><span class="line">_config.landscape.yml  node_modules<span class="regexp">/      package.json  source/</span></span><br><span class="line">_config.yml            <span class="keyword">package</span>-lock.json  scaffolds<span class="regexp">/    themes/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">L3m0nade@DESKTOP-<span class="number">7</span>PB7DBA MINGW64 <span class="regexp">/d/</span>hexo</span><br><span class="line">$ hexo g</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">L3m0nade@DESKTOP-<span class="number">7</span>PB7DBA MINGW64 <span class="regexp">/d/</span>hexo</span><br><span class="line">$ hexo s </span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
 <li><p>打开 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> 可以查看到当前hexo web样式.如果端口被占可以考虑<a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/windows-finds-port-usage.html">https://www.runoob.com/w3cnote/windows-finds-port-usage.html</a> 自行解决。</p>
 </li>
 <li><p>这时会发现hexo目录下多了东西：</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">L3m0nade@DESKTOP-<span class="number">7</span>PB7DBA MINGW64 <span class="regexp">/d/</span>hexo</span><br><span class="line">$ ls</span><br><span class="line">_config.landscape.yml  db.json        <span class="keyword">package</span>-lock.json  <span class="keyword">public</span><span class="regexp">/     source/</span></span><br><span class="line">_config.yml            node_modules<span class="regexp">/  package.json       scaffolds/</span>  themes/</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">L3m0nade@DESKTOP-<span class="number">7</span>PB7DBA MINGW64 <span class="regexp">/d/</span>hexo</span><br><span class="line">$ ls</span><br><span class="line">_config.landscape.yml  db.json        <span class="keyword">package</span>-lock.json  <span class="keyword">public</span><span class="regexp">/     source/</span></span><br><span class="line">_config.yml            node_modules<span class="regexp">/  package.json       scaffolds/</span>  themes/</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
 <li><p>出现一个public文件夹，里面是 hexo generate命令之后，将souce文件夹下的Markdown和HTML文件解析到了public文件夹下，并生成了db.json文件 </p>
 <ul>
-<li><p> <strong>_config.yml是整个博客的配置文件</strong> </p>
+<li><p><strong>_config.yml是整个博客的配置文件</strong> </p>
 </li>
 <li><p>将博客部署到 github 个人主页上，安装插件：</p>
 </li>
 <li><p>npm install hexo-deployer-git –save  </p>
 </li>
 <li><p>编辑目录下的 _config.yml 文件, 在文件末尾添加如下内容： </p>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">      <span class="attribute">type</span>: git</span><br><span class="line">      <span class="attribute">repo</span>: git@github.com:l<span class="number">3</span>m<span class="number">0</span>nade/l<span class="number">3</span>m<span class="number">0</span>nade.github.io.git</span><br><span class="line">      <span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">      <span class="attribute">type</span>: git</span><br><span class="line">      <span class="attribute">repo</span>: git@github.com:l<span class="number">3</span>m<span class="number">0</span>nade/l<span class="number">3</span>m<span class="number">0</span>nade.github.io.git</span><br><span class="line">      <span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>然后hexo d，就可以把本地的public的内容上传到l3m0nade.github.io，然后访问就行了。</p>
 </li>
 </ul>
@@ -373,20 +379,21 @@
 <li><p><strong>到此为止本地搭建到git到github，使用xxx.github.io查看安装成功的初始化就结束了。</strong></p>
 </li>
 <li><p>这里记录一下hexo的4个命令：</p>
-<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="attr">clean</span>  = hexo c <span class="comment"># 清除本地缓存，也就是清除public/文件夹和db.json文件。</span></span><br><span class="line"></span><br><span class="line">hexo <span class="attr">generate</span> = hexo g <span class="comment"># 将souce文件夹下的Markdown和HTML文件解析到了public文件夹下，并生成了db.json文件</span></span><br><span class="line"></span><br><span class="line">hexo <span class="attr">server</span> = hexo s <span class="comment"># 开启本地调试模式</span></span><br><span class="line"></span><br><span class="line">hexo <span class="attr">deploy</span> = hexo d <span class="comment"># 将本地资源部署到GithubPages</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="attr">clean</span>  = hexo c <span class="comment"># 清除本地缓存，也就是清除public/文件夹和db.json文件。</span></span><br><span class="line"></span><br><span class="line">hexo <span class="attr">generate</span> = hexo g <span class="comment"># 将souce文件夹下的Markdown和HTML文件解析到了public文件夹下，并生成了db.json文件</span></span><br><span class="line"></span><br><span class="line">hexo <span class="attr">server</span> = hexo s <span class="comment"># 开启本地调试模式</span></span><br><span class="line"></span><br><span class="line">hexo <span class="attr">deploy</span> = hexo d <span class="comment"># 将本地资源部署到GithubPages</span></span><br></pre></td></tr></table></figure>
+</li>
 <li><p>scaffolds文件夹</p>
 <ul>
-<li>scaffolds是模板文件夹，当创建新的文章时，Hexo会根据scaffold里的不同模板来建立文件. Hexo的<strong>三种默认布局post、page和draft</strong>。使用Hexo创建三种模板类型的文件时，被创建的文件会被保存到不同的路径。而我们<strong>自定义的其他布局和post相同，都会保存在source/_posts文件夹下</strong>。 </li>
+<li>scaffolds是模板文件夹，当创建新的文章时，Hexo会根据scaffold里的不同模板来建立文件. Hexo的<strong>三种默认布局post、page和draft</strong>。使用Hexo创建三种模板类型的文件时，被创建的文件会被保存到不同的路径。而我们<strong>自定义的其他布局和post相同，都会保存在source&#x2F;_posts文件夹下</strong>。</li>
 </ul>
 </li>
 <li><p>source文件夹</p>
 <ul>
-<li>source资源文件夹，是存放用户资源的地方。除post文件夹除外，开头以_（下划线）命名的文件/文件夹或隐藏文件都会在generate时被忽略。Markdown和HTML文件夹会被解析到public文件夹下，其它文件格式的文件会被直接拷贝过去。</li>
+<li>source资源文件夹，是存放用户资源的地方。除post文件夹除外，开头以_（下划线）命名的文件&#x2F;文件夹或隐藏文件都会在generate时被忽略。Markdown和HTML文件夹会被解析到public文件夹下，其它文件格式的文件会被直接拷贝过去。</li>
 </ul>
 </li>
 <li><p>themes文件夹</p>
 <ul>
-<li> <strong>themes</strong>是主题文件夹。Hexo会根据设置的主题来生成静态的页面，刚才说到<strong>使用Hexo init</strong>生成的初始化站点的主题可能并不是你预估的样子 </li>
+<li><strong>themes</strong>是主题文件夹。Hexo会根据设置的主题来生成静态的页面，刚才说到<strong>使用Hexo init</strong>生成的初始化站点的主题可能并不是你预估的样子</li>
 </ul>
 </li>
 </ul>
@@ -427,7 +434,7 @@
 <p><strong>注意：每次这种更新，都要hexo g,(hexo s是本地，可以hexo s –debug先本地测试一下)然后hexo d上传，github.io才会变。</strong> </p>
 <p><strong>修改生成的默认页面信息，要到主题下面的config.yml文件里面去改，而不是根目录下的config.yml文件</strong> </p>
 <h2 id="Hexo-Github-Pages-个人服务器"><a href="#Hexo-Github-Pages-个人服务器" class="headerlink" title="Hexo +Github Pages+个人服务器"></a>Hexo +Github Pages+个人服务器</h2><h3 id="服务器环境搭建"><a href="#服务器环境搭建" class="headerlink" title="服务器环境搭建"></a>服务器环境搭建</h3><ul>
-<li>xshell或ssh连接服务器后，所在目录/root</li>
+<li>xshell或ssh连接服务器后，所在目录&#x2F;root</li>
 </ul>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="builtin-name">get</span> update</span><br><span class="line">sudo apt-<span class="builtin-name">get</span> install git</span><br><span class="line">sudo apt-<span class="builtin-name">get</span> install nginx</span><br></pre></td></tr></table></figure>
 
@@ -447,12 +454,12 @@
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod <span class="number">400</span> <span class="regexp">/etc/</span>sudoers</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li> 创建 ~/.ssh 文件夹和 ~/.ssh/authorized_keys 文件，并赋予相应的权限 ：</li>
+<li>创建 ~&#x2F;.ssh 文件夹和 ~&#x2F;.ssh&#x2F;authorized_keys 文件，并赋予相应的权限 ：</li>
 </ul>
 <figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/.ssh</span><br><span class="line">vim ~<span class="regexp">/.ssh/</span>authorized_keys</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>按”i”进入编辑模式，将我们在win10中生成的id_rsa.pub文件中的公钥复制到authorized_keys中，按”esc”，然后按”:wq”，保存退出。 </li>
+<li>按”i”进入编辑模式，将我们在win10中生成的id_rsa.pub文件中的公钥复制到authorized_keys中，按”esc”，然后按”:wq”，保存退出。</li>
 </ul>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod <span class="number">600</span> <span class="regexp">/home/gi</span>t<span class="regexp">/.ssh/</span>authorized_keys</span><br><span class="line">chmod <span class="number">700</span> <span class="regexp">/home/gi</span>t/.ssh</span><br></pre></td></tr></table></figure>
 
@@ -466,15 +473,13 @@
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir <span class="regexp">/var/</span>repo    <span class="comment">#新建目录，这是git仓库的位置</span></span><br><span class="line">sudo mkdir <span class="regexp">/var/</span>www         <span class="comment">#</span></span><br><span class="line">sudo mkdir <span class="regexp">/var/</span>www/hexo  <span class="comment">#这是博客源文件的目录</span></span><br><span class="line">cd <span class="regexp">/var/</span>repo  <span class="comment">#转到git仓库的文件夹</span></span><br><span class="line">sudo git init --bare blog.git <span class="comment">#创建一个名叫blog的仓库</span></span><br><span class="line">sudo vim <span class="regexp">/var/</span>repo<span class="regexp">/blog.git/</span>hooks/post-update</span><br><span class="line"></span><br><span class="line">vim:</span><br><span class="line"><span class="comment">#!/bin/bash</span></span><br><span class="line">git --work-tree=<span class="regexp">/var/</span>www<span class="regexp">/hexo --git-dir=/</span>var<span class="regexp">/repo/</span>blog.git checkout -f</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li><p> 当我们从本地push上去时，git-hooks会自动执行上面命令，这是git自带的的方法，表示在<code>/var/repo/blog.git</code>中对<code>/var/www/hexo</code>执行<code>checkout -f</code>命令，可以在我们每次 push 完之后，把部署目录更新到博客的最新状态</p>
+<li><p>当我们从本地push上去时，git-hooks会自动执行上面命令，这是git自带的的方法，表示在<code>/var/repo/blog.git</code>中对<code>/var/www/hexo</code>执行<code>checkout -f</code>命令，可以在我们每次 push 完之后，把部署目录更新到博客的最新状态</p>
 </li>
 <li><p>更改权限：</p>
  <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd blog.git<span class="regexp">/hooks/</span></span><br><span class="line">sudo chown -R git:git <span class="regexp">/var/</span>repo/      <span class="comment">#进行文件夹及其子文件所有者变更</span></span><br><span class="line">sudo chown -R git:git <span class="regexp">/var/</span>www/hexo  <span class="comment">#进行文件夹及其子文件所有者变更</span></span><br><span class="line">sudo chmod +x post-update  <span class="comment">#赋予其可执行权限</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
 </ul>
-<p> sudo nginx -t #可以看到配置文件路径<br>   sudo vim /etc/nginx/nginx.conf</p>
-   <figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line"></span><br><span class="line">  </span><br><span class="line">## 域名解析</span><br><span class="line">  </span><br></pre></td></tr></table></figure>
-<p>   我的域名是阿里云的，l3m0nade.xyz,以此为例.<br>   在域名解析的后台位置，点击域名连接（云解析-&gt;域名解析-&gt;解析设置）<br>   添加记录<br>   主机记录填个词，比如blog,记录类型填写CNAME，用于后面记录处填写域名。这里记录的域名填写l3m0nade.github.io。即把blog.lem0nade.xyz和解析到l3m0nade.github.io<br> 这里还没完，github里面要改一下域名设置才能解析成功。</p>
-   <figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="bullet">* </span>Github Pages绑定域名</span><br><span class="line"></span><br><span class="line"><span class="bullet">* </span>github.com中xxx.github.io打开settings</span><br><span class="line"></span><br><span class="line"><span class="bullet">* </span>在Github Pages的Custom domains输入你的域名blog.l3m0nade.xyz</span><br><span class="line"></span><br><span class="line"><span class="code">  </span></span><br></pre></td></tr></table></figure></li>
+<p> sudo nginx -t #可以看到配置文件路径<br>   sudo vim &#x2F;etc&#x2F;nginx&#x2F;nginx.conf<br>   <figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line"></span><br><span class="line">  </span><br><span class="line">## 域名解析</span><br><span class="line">  </span><br></pre></td></tr></table></figure><br>   我的域名是阿里云的，l3m0nade.xyz,以此为例.<br>   在域名解析的后台位置，点击域名连接（云解析-&gt;域名解析-&gt;解析设置）<br>   添加记录<br>   主机记录填个词，比如blog,记录类型填写CNAME，用于后面记录处填写域名。这里记录的域名填写l3m0nade.github.io。即把blog.lem0nade.xyz和解析到l3m0nade.github.io<br> 这里还没完，github里面要改一下域名设置才能解析成功。<br>   <figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="bullet">* </span>Github Pages绑定域名</span><br><span class="line"></span><br><span class="line"><span class="bullet">* </span>github.com中xxx.github.io打开settings</span><br><span class="line"></span><br><span class="line"><span class="bullet">* </span>在Github Pages的Custom domains输入你的域名blog.l3m0nade.xyz</span><br><span class="line"></span><br><span class="line"><span class="code">  </span></span><br></pre></td></tr></table></figure></p>
+</li>
 </ul>
 <h3 id="配置sitemap让搜索引擎找到blog"><a href="#配置sitemap让搜索引擎找到blog" class="headerlink" title="配置sitemap让搜索引擎找到blog"></a>配置sitemap让搜索引擎找到blog</h3><p> 搜索引擎是通过站点地图（sitemap）去抓取可供爬取的网页的，所以首先需要配置站点的sitemap以允许搜索爬虫搜集到博客的站点信息。 </p>
 <p> Hexo有自动生成站点地图的工具，在博客根目录（D:\hexo）下输入以下命令以<strong>生成sitemap</strong>: </p>
@@ -494,7 +499,7 @@
 </li>
 <li><p>验证成功后选择前往资源，会进入<a target="_blank" rel="noopener" href="https://www.google.com/webmasters/tools/">这个网站</a>，在左侧的工具栏选择站点地图，并在弹出的界面<strong>输入sitemap的存放路径</strong>。比如我的是：<a href="https://blog.l3m0nade.xyz/sitemap.xml">https://blog.l3m0nade.xyz/sitemap.xml</a></p>
 </li>
-<li><p>当public/为站点的根目录后，此时输入的就是sitemap在public/文件夹下的位置。</p>
+<li><p>当public&#x2F;为站点的根目录后，此时输入的就是sitemap在public&#x2F;文件夹下的位置。</p>
 </li>
 <li><p>等待一段时间，你就可以通过Google检索到你的博客了。而如何通过百度进行站点地图设置大同小异，你可以自己尝试一下。</p>
 </li>
@@ -524,7 +529,7 @@
 <p>有关Next配置可以看着<a target="_blank" rel="noopener" href="https://theme-next.js.org/docs/theme-settings/">文档</a>改，这个说的比我清楚多了</p>
 <p>下面记录一些比较特别的</p>
 <ul>
-<li><p>对于/hexo/_config.yml,<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration.html">参考链接</a></p>
+<li><p>对于&#x2F;hexo&#x2F;_config.yml,<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration.html">参考链接</a></p>
 <ul>
 <li><p>site</p>
 </li>
@@ -617,11 +622,12 @@
 </li>
 <li><p>Local Search插件</p>
 <ul>
-<li><p> npm install hexo-generator-searchdb –save </p>
+<li><p>npm install hexo-generator-searchdb –save </p>
 </li>
 <li><p>修改<code>hexo/_config.yml</code>站点配置文件，新增以下内容到任意位置： </p>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">search:</span></span><br><span class="line"><span class="symbol">    path:</span> search.xml</span><br><span class="line"><span class="symbol">    field:</span> post</span><br><span class="line"><span class="symbol">    format:</span> html</span><br><span class="line"><span class="symbol">    limit:</span> <span class="number">10000</span> </span><br></pre></td></tr></table></figure></li>
-<li><p> 编辑 <strong>themes里的配置文件</strong>，启用本地搜索功能，将Local Search里改为True即可，generate,deploy 后可在页面内搜索</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">search:</span></span><br><span class="line"><span class="symbol">    path:</span> search.xml</span><br><span class="line"><span class="symbol">    field:</span> post</span><br><span class="line"><span class="symbol">    format:</span> html</span><br><span class="line"><span class="symbol">    limit:</span> <span class="number">10000</span> </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编辑 <strong>themes里的配置文件</strong>，启用本地搜索功能，将Local Search里改为True即可，generate,deploy 后可在页面内搜索</p>
 </li>
 </ul>
 </li>
@@ -633,7 +639,7 @@
 </li>
 <li><p>开启自定义swig文件功能</p>
 <ul>
-<li> 将 <code>custom_file_path:</code> 属性下面的值全部取消注释, 并且在<strong>网站根目录</strong>下的 source 文件夹中新建 <code>_data</code> 文件夹, 注意不是在主题根目录下的 source 文件夹中新建. 之后在 <code>_data</code> 文件夹中将对应的所有文件全部手动创建好(因为不会自动创建). 之后如果要自定义样式, 直接修改这些文件就行了. </li>
+<li>将 <code>custom_file_path:</code> 属性下面的值全部取消注释, 并且在<strong>网站根目录</strong>下的 source 文件夹中新建 <code>_data</code> 文件夹, 注意不是在主题根目录下的 source 文件夹中新建. 之后在 <code>_data</code> 文件夹中将对应的所有文件全部手动创建好(因为不会自动创建). 之后如果要自定义样式, 直接修改这些文件就行了. </li>
 <li>比如想要自定义背景就要改styles.styl</li>
 </ul>
 </li>
@@ -647,8 +653,8 @@
 </li>
 <li><p>开启RSS订阅</p>
 <ul>
-<li> npm install –save hexo-generator-feed </li>
-<li> 在主题配置文件中搜索 rss 设置为: <code>rss: /atom.xml</code> </li>
+<li>npm install –save hexo-generator-feed </li>
+<li>在主题配置文件中搜索 rss 设置为: <code>rss: /atom.xml</code></li>
 </ul>
 </li>
 <li><p>头像显示</p>
@@ -660,7 +666,8 @@
 <li><p>添加背景图片和透明度</p>
 <ul>
 <li><p><code>hexo</code>目录下，在<code>source/_data</code>(<code>_data</code>目录之前没手动创建过的话要手动创建)下新建<code>styles.styl</code>，内容为 </p>
-<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line"> 	<span class="attribute">background</span>:url(/images/background.jpg);</span><br><span class="line"> 	<span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">    <span class="attribute">background-attachment</span>:fixed;</span><br><span class="line">    <span class="attribute">background-position</span>:<span class="number">50%</span> <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">background-size</span>:<span class="number">100%</span> <span class="number">100%</span>;</span><br><span class="line">&#125;    </span><br><span class="line"><span class="comment">// 文章主体透明度</span></span><br><span class="line"><span class="selector-class">.main-inner</span>&#123;</span><br><span class="line">	<span class="attribute">opacity</span>: <span class="number">0.9</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 放置头像等的边栏透明度</span></span><br><span class="line"><span class="selector-class">.sidebar</span>&#123;</span><br><span class="line">	<span class="attribute">opacity</span>: <span class="number">0.7</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 标题等头部透明度</span></span><br><span class="line"><span class="selector-class">.header-inner</span>&#123;</span><br><span class="line">	<span class="attribute">opacity</span>: <span class="number">0.7</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 底部透明度</span></span><br><span class="line"><span class="selector-class">.footer-inner</span>&#123;</span><br><span class="line">	<span class="attribute">color</span>:black;</span><br><span class="line">	<span class="attribute">opacity</span>: <span class="number">0.7</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line"> 	<span class="attribute">background</span>:url(/images/background.jpg);</span><br><span class="line"> 	<span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">    <span class="attribute">background-attachment</span>:fixed;</span><br><span class="line">    <span class="attribute">background-position</span>:<span class="number">50%</span> <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">background-size</span>:<span class="number">100%</span> <span class="number">100%</span>;</span><br><span class="line">&#125;    </span><br><span class="line"><span class="comment">// 文章主体透明度</span></span><br><span class="line"><span class="selector-class">.main-inner</span>&#123;</span><br><span class="line">	<span class="attribute">opacity</span>: <span class="number">0.9</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 放置头像等的边栏透明度</span></span><br><span class="line"><span class="selector-class">.sidebar</span>&#123;</span><br><span class="line">	<span class="attribute">opacity</span>: <span class="number">0.7</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 标题等头部透明度</span></span><br><span class="line"><span class="selector-class">.header-inner</span>&#123;</span><br><span class="line">	<span class="attribute">opacity</span>: <span class="number">0.7</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 底部透明度</span></span><br><span class="line"><span class="selector-class">.footer-inner</span>&#123;</span><br><span class="line">	<span class="attribute">color</span>:black;</span><br><span class="line">	<span class="attribute">opacity</span>: <span class="number">0.7</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>说明：</p>
 <ul>
 <li>background:图片路径，也可以直接使用链接</li>
@@ -670,7 +677,8 @@
 <li>background-size：图片展示大小，这里如果设置100% 100%，当背景图片不能全屏，通过拉伸的方式将背景强制拉伸至全屏显示。如果不添加，图片虽然不会完整显示，但不会因为拉伸变形。个人更喜欢不加这个属性。</li>
 </ul>
 <p>然后在<code>next</code>主题的<code>_config.yml</code>下<code>custom_file_path</code>解开<code>style: source/_data/styles.styl</code>注释。</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># Define custom <span class="keyword">file</span> paths.</span><br><span class="line"># Create your custom files in site directory `<span class="keyword">source</span>/_data` and uncomment needed files below.</span><br><span class="line">custom_file_path:</span><br><span class="line">  #head: <span class="keyword">source</span><span class="regexp">/_data/</span>head.njk</span><br><span class="line">  #header: <span class="keyword">source</span><span class="regexp">/_data/</span>header.njk</span><br><span class="line">  #sidebar: <span class="keyword">source</span><span class="regexp">/_data/</span>sidebar.njk</span><br><span class="line">  #postMeta: <span class="keyword">source</span><span class="regexp">/_data/</span>post-meta.njk</span><br><span class="line">  #postBodyEnd: <span class="keyword">source</span><span class="regexp">/_data/</span>post-body-end.njk</span><br><span class="line">  #footer: <span class="keyword">source</span><span class="regexp">/_data/</span>footer.njk</span><br><span class="line">  footer: <span class="keyword">source</span><span class="regexp">/_data/</span>footer.swig</span><br><span class="line">  #bodyEnd: <span class="keyword">source</span><span class="regexp">/_data/</span>body-end.njk</span><br><span class="line">  #variable: <span class="keyword">source</span><span class="regexp">/_data/</span>variables.styl</span><br><span class="line">  #mixin: <span class="keyword">source</span><span class="regexp">/_data/mi</span>xins.styl</span><br><span class="line">  style: <span class="keyword">source</span><span class="regexp">/_data/</span>styles.styl</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># Define custom <span class="keyword">file</span> paths.</span><br><span class="line"># Create your custom files in site directory `<span class="keyword">source</span>/_data` and uncomment needed files below.</span><br><span class="line">custom_file_path:</span><br><span class="line">  #head: <span class="keyword">source</span><span class="regexp">/_data/</span>head.njk</span><br><span class="line">  #header: <span class="keyword">source</span><span class="regexp">/_data/</span>header.njk</span><br><span class="line">  #sidebar: <span class="keyword">source</span><span class="regexp">/_data/</span>sidebar.njk</span><br><span class="line">  #postMeta: <span class="keyword">source</span><span class="regexp">/_data/</span>post-meta.njk</span><br><span class="line">  #postBodyEnd: <span class="keyword">source</span><span class="regexp">/_data/</span>post-body-end.njk</span><br><span class="line">  #footer: <span class="keyword">source</span><span class="regexp">/_data/</span>footer.njk</span><br><span class="line">  footer: <span class="keyword">source</span><span class="regexp">/_data/</span>footer.swig</span><br><span class="line">  #bodyEnd: <span class="keyword">source</span><span class="regexp">/_data/</span>body-end.njk</span><br><span class="line">  #variable: <span class="keyword">source</span><span class="regexp">/_data/</span>variables.styl</span><br><span class="line">  #mixin: <span class="keyword">source</span><span class="regexp">/_data/mi</span>xins.styl</span><br><span class="line">  style: <span class="keyword">source</span><span class="regexp">/_data/</span>styles.styl</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>在后在<code>next</code>主题的<code>source/images</code>目录下添加<code>background.jpg</code>文件,重新启动<code>hexo</code>。 </p>
 <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">hexo cl</span></span><br><span class="line"><span class="attribute">hexo g</span></span><br><span class="line"><span class="attribute">hexo s</span></span><br></pre></td></tr></table></figure></li>
 </ul>
@@ -693,7 +701,7 @@
 <h2 id="使用typora写文档"><a href="#使用typora写文档" class="headerlink" title="使用typora写文档"></a>使用typora写文档</h2><ul>
 <li><p>已经写好的md文档*1,里面的图片建议用七牛云存储，放入https的链接。</p>
 </li>
-<li><p>放在/source/_post里</p>
+<li><p>放在&#x2F;source&#x2F;_post里</p>
 </li>
 <li><p>要给文档开头加上：</p>
 </li>
@@ -776,13 +784,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">42k</span>
+    <span title="站点总字数">46k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">51 分钟</span>
+    <span title="站点阅读时长">56 分钟</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

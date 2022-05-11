@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.2">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -20,12 +20,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"blog.l3m0nade.xyz","root":"/","images":"/images","scheme":"Gemini","version":"8.7.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"livere","storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="背景关于NAND Flash老版的NAND:Page &#x3D; 512,OOB &#x3D; 16 ​    NAND容量可达1GB以上，价格也相对便宜，适合存储数据。一般来说，128MB以下容量NAND FLASH 芯片的一页大小为528字节，用来存放数据，另外每一页还有16字节的备用空间（SpareData,OOB），用来存储ECC校验&#x2F;坏块标志等信息，再由若干页组成一个块，通常一块为32页16K。 Page">
+<meta name="description" content="背景关于NAND Flash老版的NAND:Page &#x3D; 512,OOB &#x3D; 16 ​	NAND容量可达1GB以上，价格也相对便宜，适合存储数据。一般来说，128MB以下容量NAND FLASH 芯片的一页大小为528字节，用来存放数据，另外每一页还有16字节的备用空间（SpareData,OOB），用来存储ECC校验&#x2F;坏块标志等信息，再由若干页组成一个块，通常一块为32页16K。 Pa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nand Flash固件内容提取">
 <meta property="og:url" content="http://blog.l3m0nade.xyz/2021/09/23/nandFlash%E5%9B%BA%E4%BB%B6%E6%8F%90%E5%8F%96/">
 <meta property="og:site_name" content="L3m0nade的博客">
-<meta property="og:description" content="背景关于NAND Flash老版的NAND:Page &#x3D; 512,OOB &#x3D; 16 ​    NAND容量可达1GB以上，价格也相对便宜，适合存储数据。一般来说，128MB以下容量NAND FLASH 芯片的一页大小为528字节，用来存放数据，另外每一页还有16字节的备用空间（SpareData,OOB），用来存储ECC校验&#x2F;坏块标志等信息，再由若干页组成一个块，通常一块为32页16K。 Page">
+<meta property="og:description" content="背景关于NAND Flash老版的NAND:Page &#x3D; 512,OOB &#x3D; 16 ​	NAND容量可达1GB以上，价格也相对便宜，适合存储数据。一般来说，128MB以下容量NAND FLASH 芯片的一页大小为528字节，用来存放数据，另外每一页还有16字节的备用空间（SpareData,OOB），用来存储ECC校验&#x2F;坏块标志等信息，再由若干页组成一个块，通常一块为32页16K。 Pa">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-22T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-09-28T13:26:44.144Z">
@@ -89,6 +89,7 @@
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
         <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">3</span></a></li>
+        <li class="menu-item menu-item-playlist"><a href="/playlist/" rel="section"><i class="music fa-fw"></i>Music_Playlist</a></li>
         <li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a></li>
   </ul>
 </nav>
@@ -130,7 +131,7 @@
     <img class="site-author-image" itemprop="image" alt="L3m0nade"
       src="/images/touxiang.jpg">
   <p class="site-author-name" itemprop="name">L3m0nade</p>
-  <div class="site-description" itemprop="description">CTF_Reverse,IOT菜鸡的学习记录</div>
+  <div class="site-description" itemprop="description">CTF_Reverse,IOT Research,others</div>
 </div>
 <div class="site-state-wrap site-overview-item animated">
   <nav class="site-state">
@@ -200,7 +201,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/touxiang.jpg">
       <meta itemprop="name" content="L3m0nade">
-      <meta itemprop="description" content="CTF_Reverse,IOT菜鸡的学习记录">
+      <meta itemprop="description" content="CTF_Reverse,IOT Research,others">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -252,14 +253,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>7.6k</span>
+      <span>9k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>9 分钟</span>
+      <span>11 分钟</span>
     </span>
 </div>
 
@@ -271,15 +272,15 @@
     
     <div class="post-body" itemprop="articleBody">
         <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><h3 id="关于NAND-Flash"><a href="#关于NAND-Flash" class="headerlink" title="关于NAND Flash"></a>关于NAND Flash</h3><p>老版的NAND:<code>Page = 512,OOB = 16</code></p>
-<p>​    NAND容量可达1GB以上，价格也相对便宜，适合存储数据。一般来说，128MB以下容量NAND FLASH 芯片的一页大小为528字节，用来存放数据，另外每一页还有16字节的备用空间（SpareData,OOB），用来存储ECC校验/坏块标志等信息，再由若干页组成一个块，通常一块为32页16K。</p>
+<p>​	NAND容量可达1GB以上，价格也相对便宜，适合存储数据。一般来说，128MB以下容量NAND FLASH 芯片的一页大小为528字节，用来存放数据，另外每一页还有16字节的备用空间（SpareData,OOB），用来存储ECC校验&#x2F;坏块标志等信息，再由若干页组成一个块，通常一块为32页16K。</p>
 <p><code>Page = 512,OOB = 16</code></p>
 <p><code>one block = 31Pages + OOB = 31(512 + 16) + 16</code></p>
 <p>​    与NOR相比，NAND不是完全可靠的，每块芯片出厂时都有一定比例的坏块存在，对数据的存取不是使用地址映射而是通过寄存器的操作，串行存取数据。</p>
 <span id="more"></span>
 
-<h3 id="Yaffs文件系统"><a href="#Yaffs文件系统" class="headerlink" title="Yaffs文件系统"></a>Yaffs文件系统</h3><p>​    yaffs有yaffs1,yaffs2，第二种就是对更大容量NAND有更好支持</p>
-<p>​    Yaffs对文件系统上的所有内容（比如正常文件，目录，链接，设备文件等等）都统一当作文件来处理，每个文件都有一个页面专门存放文件头，文件头保存了文件的模式、所有者id、组id、长度、文件名、Parent Object ID等信息。因为需要在一页内放下这些内容，所以对文件名的长度，符号链接对象的路径名等长度都有限制。</p>
-<p>​    前面说到对于NAND FLASH上的每一页数据，都有额外的空间用来存储附加信息，通常NAND驱动只使用了这些空间的一部分，Yaffs正是利用了这部分空间中剩余的部分来存储文件系统相关的内容。以<strong>512+16B</strong>为一个PAGE的NAND FLASH芯片为例,Yaffs文件系统数据的存储布局如下所示：</p>
+<h3 id="Yaffs文件系统"><a href="#Yaffs文件系统" class="headerlink" title="Yaffs文件系统"></a>Yaffs文件系统</h3><p>​	yaffs有yaffs1,yaffs2，第二种就是对更大容量NAND有更好支持</p>
+<p>​	Yaffs对文件系统上的所有内容（比如正常文件，目录，链接，设备文件等等）都统一当作文件来处理，每个文件都有一个页面专门存放文件头，文件头保存了文件的模式、所有者id、组id、长度、文件名、Parent Object ID等信息。因为需要在一页内放下这些内容，所以对文件名的长度，符号链接对象的路径名等长度都有限制。</p>
+<p>​	前面说到对于NAND FLASH上的每一页数据，都有额外的空间用来存储附加信息，通常NAND驱动只使用了这些空间的一部分，Yaffs正是利用了这部分空间中剩余的部分来存储文件系统相关的内容。以<strong>512+16B</strong>为一个PAGE的NAND FLASH芯片为例,Yaffs文件系统数据的存储布局如下所示：</p>
 <table>
 <thead>
 <tr>
@@ -359,7 +360,7 @@
 </tbody></table>
 <h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>所以一般来说，要么使用jffs等文件系统平铺在Nand Flash上，要么就是巧用Yaffs适配NANDFlash。这个用没用具体要看OOB里有无相关Yaffs的标志位适配，他会占用30或42字节（64OOB，32；128OOB，42）。具体YAFFS的这些标志位代表什么意思可以查看官网说明，和上面老版的那个很类似。</p>
 <p><a target="_blank" rel="noopener" href="https://yaffs.net/yaffs-2-specification">https://yaffs.net/yaffs-2-specification</a></p>
-<h2 id="针对拿到的固件分析"><a href="#针对拿到的固件分析" class="headerlink" title="针对拿到的固件分析"></a>针对拿到的固件分析</h2><p>固件大小是0x11000000 = （128K + 8K） * 2048</p>
+<h2 id="针对拿到的固件分析"><a href="#针对拿到的固件分析" class="headerlink" title="针对拿到的固件分析"></a>针对拿到的固件分析</h2><p>固件大小是0x11000000 &#x3D; （128K + 8K） * 2048</p>
 <p>即这个东西有两个Plane，每个Plane有1024Block,每个Block有64Page，每个Page是(2048 + 128 )Bytes .</p>
 <table>
 <thead>
@@ -372,15 +373,15 @@
 <tbody><tr>
 <td>Block</td>
 <td>（2K+128）*64 Bytes</td>
-<td>0x880 * 64 = 0x22000</td>
+<td>0x880 * 64 &#x3D; 0x22000</td>
 </tr>
 <tr>
 <td>Page</td>
 <td>(2K+128)</td>
-<td>0x880 = 0x800 + 0x80</td>
+<td>0x880 &#x3D; 0x800 + 0x80</td>
 </tr>
 </tbody></table>
-<h4 id="初步脚本："><a href="#初步脚本：" class="headerlink" title="初步脚本："></a>初步脚本：</h4><p>对于每一个块，看了第一，二，最后页的OOB第一字节是否为/xff确定坏块不的官方说法。</p>
+<h4 id="初步脚本："><a href="#初步脚本：" class="headerlink" title="初步脚本："></a>初步脚本：</h4><p>对于每一个块，看了第一，二，最后页的OOB第一字节是否为&#x2F;xff确定坏块不的官方说法。</p>
 <figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line">the <span class="number">1</span>st <span class="keyword">byte</span> in the spare area of the <span class="number">1</span>st <span class="keyword">or</span> <span class="number">2</span>nd <span class="keyword">or</span> last page</span><br><span class="line">does <span class="keyword">not</span> contain FFh is a Bad block.</span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line">f1 = <span class="built_in">open</span>(<span class="string">&quot;xxx.BIN&quot;</span>,<span class="string">&quot;rb&quot;</span>)</span><br><span class="line"></span><br><span class="line">f2 = <span class="built_in">open</span>(<span class="string">&quot;xxx_extract.bin&quot;</span>,<span class="string">&quot;wb&quot;</span>)</span><br><span class="line"></span><br><span class="line">page = <span class="number">2048</span> + <span class="number">128</span></span><br><span class="line">total = <span class="number">0x7359840</span></span><br><span class="line">block_per_page = <span class="number">64</span></span><br><span class="line">block = math.<span class="built_in">ceil</span>(math.<span class="built_in">ceil</span>(total/page)/block_per_page)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i in <span class="built_in">range</span>(block):</span><br><span class="line">    first_page = f1.<span class="built_in">read</span>(page)</span><br><span class="line">    second_page = f1.<span class="built_in">read</span>(page)</span><br><span class="line">    others = []</span><br><span class="line">    <span class="keyword">for</span> j in <span class="built_in">range</span>(<span class="number">61</span>):</span><br><span class="line">        others.<span class="built_in">append</span>(f1.<span class="built_in">read</span>(page))</span><br><span class="line">    last_page = f1.<span class="built_in">read</span>(page)</span><br><span class="line">    <span class="keyword">if</span> first_page[<span class="number">2048</span>] == <span class="number">0xFF</span> <span class="keyword">and</span> second_page[<span class="number">2048</span>] == <span class="number">0xFF</span> <span class="keyword">and</span> last_page[<span class="number">2048</span>] == <span class="number">0xFF</span>:</span><br><span class="line">        f2.<span class="built_in">write</span>(first_page[:<span class="number">2048</span>])</span><br><span class="line">        f2.<span class="built_in">write</span>(second_page[:<span class="number">2048</span>])</span><br><span class="line">        <span class="keyword">for</span> k in <span class="built_in">range</span>(<span class="number">61</span>):</span><br><span class="line">            f2.<span class="built_in">write</span>(others[k][:<span class="number">2048</span>])</span><br><span class="line">        f2.<span class="built_in">write</span>(last_page[:<span class="number">2048</span>])</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Bad Block &#123;&#125;&quot;</span>.format(i))</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">f1.<span class="built_in">close</span>()</span><br><span class="line">f2.<span class="built_in">close</span>()</span><br></pre></td></tr></table></figure>
 
 
@@ -423,7 +424,7 @@
 </ul>
 <p><code>dd if=source.BIN of=sourceYaffs.bin bs=69701632 skip=51251328 count=1 </code></p>
 <ul>
-<li><p>但是可以看到里面没有加密，ELF文件头，#！/bin/sh脚本头都可以看到，只是脚本内容和名字有映射关系，binwalk似乎不能做到识别。</p>
+<li><p>但是可以看到里面没有加密，ELF文件头，#！&#x2F;bin&#x2F;sh脚本头都可以看到，只是脚本内容和名字有映射关系，binwalk似乎不能做到识别。</p>
 </li>
 <li><p>yaffs解的脚本莫名其妙解出来一个php-cgi.其他就解不开。。。应该也是识别有问题，这个结构可能很新或者被调整了。。。而且这个php-cgiida打不开，显然是因为没页都加进去了14字节checknum，没加入14字节数据导致的。</p>
 </li>
@@ -521,7 +522,7 @@
 </tbody></table>
 <p>观察到作为名字，前10字节有些规律，区分文件还是文件夹，但是没这10字节就去分不开名字和内容了。</p>
 <p>可以用这3部分数据做一步过滤</p>
-<p>01 ==00 00 00== <strong>88 03</strong>  <em>00 00 FF FF</em></p>
+<p>01 &#x3D;&#x3D;00 00 00&#x3D;&#x3D; <strong>88 03</strong>  <em>00 00 FF FF</em></p>
 <p>建一个文件夹flash，里面放sourceYaffs.bin和如下脚本：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">the 1st byte in the spare area of the 1st or 2nd or last page</span></span><br><span class="line"><span class="string">does not contain FFh is a Bad block.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">+ remove checknum and add OOB&#x27;s data</span></span><br><span class="line"><span class="string">+ known:no bad block</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">+ only yaffs </span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line">f1 = <span class="built_in">open</span>(<span class="string">&quot;sourceYaffs.bin&quot;</span>,<span class="string">&quot;rb&quot;</span>)</span><br><span class="line">page = <span class="number">2048</span> + <span class="number">128</span></span><br><span class="line">total = <span class="number">0x4279000</span></span><br><span class="line"><span class="comment">#black is string.punctuations,without _ .- </span></span><br><span class="line">black = [<span class="number">33</span>, <span class="number">34</span>, <span class="number">35</span>, <span class="number">36</span>, <span class="number">37</span>, <span class="number">38</span>, <span class="number">39</span>, <span class="number">40</span>, <span class="number">41</span>, <span class="number">42</span>, <span class="number">43</span>, <span class="number">44</span>, <span class="number">47</span>, <span class="number">58</span>, <span class="number">59</span>, <span class="number">60</span>, <span class="number">61</span>, <span class="number">62</span>, <span class="number">63</span>, <span class="number">64</span>, <span class="number">91</span>, <span class="number">92</span>, <span class="number">93</span>, <span class="number">94</span>, <span class="number">96</span>, <span class="number">123</span>, <span class="number">124</span>, <span class="number">125</span>, <span class="number">126</span>]</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">checkdata</span>(<span class="params">data</span>):</span></span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    for i in data:</span></span><br><span class="line"><span class="string">        if i in black:</span></span><br><span class="line"><span class="string">            return False</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    tmp = data.strip(<span class="string">b&#x27;\x00&#x27;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> <span class="string">b&#x27;\x00&#x27;</span> <span class="keyword">not</span> <span class="keyword">in</span> tmp :</span><br><span class="line">        <span class="keyword">return</span> tmp</span><br><span class="line">    <span class="keyword">else</span>: </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span>  </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">checkhead</span>(<span class="params">head</span>):</span></span><br><span class="line">    d1 = head[<span class="number">1</span>:<span class="number">4</span>]</span><br><span class="line">    d2 = head[<span class="number">4</span>:<span class="number">6</span>]</span><br><span class="line">    d3 = head[<span class="number">6</span>:<span class="number">10</span>]</span><br><span class="line">    <span class="comment">#print(&quot;d1,d2,d3:&quot;,d1,d2,d3)</span></span><br><span class="line">    <span class="keyword">if</span> d1 != <span class="string">b&#x27;\x00\x00\x00&#x27;</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">if</span> <span class="string">b&#x27;\x00&#x27;</span> <span class="keyword">in</span> d2:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">if</span> d3 != <span class="string">b&#x27;\x00\x00\xff\xff&#x27;</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">oobFilter</span>(<span class="params">data</span>):</span></span><br><span class="line">    data1 = data[<span class="number">0</span>:<span class="number">0x410</span>]</span><br><span class="line">    data2 = data[<span class="number">0x41e</span>:<span class="number">0x800</span>]</span><br><span class="line">    data3 = data[<span class="number">0x802</span>:<span class="number">0x810</span>]</span><br><span class="line">    <span class="keyword">return</span> data1+data2+data3</span><br><span class="line"></span><br><span class="line"><span class="comment">#get name addrs</span></span><br><span class="line">addr2name = &#123;&#125;</span><br><span class="line">addrs = []</span><br><span class="line">addr = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(total//page):</span><br><span class="line">    datas = f1.read(page)</span><br><span class="line">    head = datas[<span class="number">0</span>:<span class="number">10</span>]</span><br><span class="line">    <span class="keyword">if</span> checkhead(head):</span><br><span class="line">        <span class="comment">#print(&quot;head:&quot;,head)</span></span><br><span class="line">        name = datas[<span class="number">10</span>:<span class="number">0x20</span>]</span><br><span class="line">        name = checkdata(name)    </span><br><span class="line">        <span class="keyword">if</span> name:</span><br><span class="line">            <span class="comment">#print(name,hex(addr))</span></span><br><span class="line">            addr2name[<span class="built_in">hex</span>(addr)] = name</span><br><span class="line">            addrs.append(addr)</span><br><span class="line">    addr += page</span><br><span class="line">addrs.append(total)</span><br><span class="line"></span><br><span class="line"><span class="comment">#get each content</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(addr2name)):</span><br><span class="line">    Name = addr2name[<span class="built_in">hex</span>(addrs[i])]</span><br><span class="line">    dataStart = addrs[i] + page</span><br><span class="line">    dataPoint = dataStart</span><br><span class="line">    dataNext = addrs[i+<span class="number">1</span>]</span><br><span class="line">    f1.seek(dataStart)</span><br><span class="line">        <span class="comment">#print(Name,hex(dataStart),hex(dataPoint),hex(dataNext))</span></span><br><span class="line">    f = <span class="built_in">open</span>(Name,<span class="string">&#x27;wb&#x27;</span>)</span><br><span class="line">    <span class="keyword">while</span> dataPoint != dataNext:</span><br><span class="line">        </span><br><span class="line">        <span class="comment">#print(hex(dataPoint),hex(dataNext))</span></span><br><span class="line">        data = f1.read(page)</span><br><span class="line">        data = oobFilter(data)</span><br><span class="line">        data = data.strip(<span class="string">b&#x27;\xff&#x27;</span>)</span><br><span class="line">        <span class="keyword">if</span> i == <span class="number">1390</span>:</span><br><span class="line">            <span class="built_in">print</span>(data)</span><br><span class="line">        f.write(data)</span><br><span class="line">        dataPoint += page</span><br><span class="line">    <span class="comment">#print(&quot;Finish %s&quot; % (Name))</span></span><br><span class="line">    f.close()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>(addr2name))</span><br><span class="line">f1.close()</span><br></pre></td></tr></table></figure>
 
@@ -579,13 +580,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">42k</span>
+    <span title="站点总字数">46k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">51 分钟</span>
+    <span title="站点阅读时长">56 分钟</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
